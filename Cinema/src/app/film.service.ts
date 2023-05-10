@@ -20,6 +20,7 @@ export class FilmService {
     langue: '',
     bandeAnnonce: '',
     // listeSeances[] : Seance,
+    image : '',
   };
   
   public get film() : Film {

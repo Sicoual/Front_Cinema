@@ -11,4 +11,5 @@ export interface Film {
 	langue : string,
 	bandeAnnonce : string,
 	// listeSeances[] : Seance,
+	image : string;
 }

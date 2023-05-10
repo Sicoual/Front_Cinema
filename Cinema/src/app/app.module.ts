@@ -1,29 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { PageDeImage1Component } from './page-de-image1/page-de-image1.component';
-import { InfosFilmComponent } from './infos-film/infos-film.component';
-import { FilmService } from './film.service';
 import { HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
+import { GrilleFilmsComponent } from './voirTousLesFilms/grille-films/grille-films.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    InfosFilmComponent,
-    PageDeImage1Component
-    ],
-  
+    GrilleFilmsComponent
+  ],
   imports: [
-    
     BrowserModule,
     AppRoutingModule,
-     HttpClientModule
-
+    HttpClientModule
   ],
- 
-  providers: [FilmService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

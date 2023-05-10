@@ -24,6 +24,7 @@ export class InfosFilmComponent implements OnInit {
     categorie: '',
     langue: '',
     bandeAnnonce: '',
+    image: '',
   }
 
   constructor (public filmService : FilmService, private router : Router) {}

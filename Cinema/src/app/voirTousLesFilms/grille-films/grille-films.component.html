@@ -1,0 +1,22 @@
+<p>grille-films works!</p>
+
+<h1>Test</h1>
+
+<div class="grille-films">
+    <div class="film-card" *ngFor="let film of films">
+      <img [src]="film.image" alt="{{ film.nom }}" class="film-image">
+      <div class="film-info">
+        <h2 class="film-title">{{ film.nom }}</h2>
+        <p class="film-director">Réalisateur : {{ film.realisateur }}</p>
+        <p class="film-actors">Acteurs : {{ film.acteur_1 }}, {{ film.acteur_2 }}</p>
+        <p class="film-duration">Durée : {{ film.duree }}</p>
+        <p class="film-release-date">Date de sortie : {{ film.dateSortie }}</p>
+        <p class="film-synopsis">Synopsis : {{ film.synopsis }}</p>
+        <p class="film-category">Catégorie : {{ film.categorie }}</p>
+        <p class="film-language">Langue : {{ film.langue }}</p>
+        <p class="film-bandeAnnonce">Bande annonce : {{ film.bandeAnnonce }}</p>
+        <!-- <p class="film-showtimes">Séances : {{ film.seance }}</p> -->
+      </div>
+    </div>
+  </div>
+  
