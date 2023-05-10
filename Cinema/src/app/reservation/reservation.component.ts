@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AfficherSeanceService } from '../service/afficher-seance.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-reservation',
@@ -8,30 +9,39 @@ import { AfficherSeanceService } from '../service/afficher-seance.service';
 })
 export class ReservationComponent {
 
+  seanceId!: number;
+  nombrePlaces = 0;
+  prix!: number;
+  placesRestantes!: number;
+  reservationReussie = false;
 
-
-  constructor(private seanceService: AfficherSeanceService) { }
-
+  constructor(
+    private seanceService: AfficherSeanceService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.seanceId = Number(this.route.snapshot.paramMap.get('id'));
+    this.calculerPrix();
   }
 
-  reserverPlaces(idSeance: number, nombrePlaces: number) {
-    this.seanceService.ajouterReservation(idSeance, nombrePlaces).subscribe({
+  reserverPlaces() {
+    this.seanceService.ajouterReservation(this.seanceId, this.nombrePlaces).subscribe({
       next: (placesRestantes) => {
         console.log(`Réservation réussie. Places restantes: ${placesRestantes}`);
+        this.placesRestantes = placesRestantes;
+        this.reservationReussie = true;
       },
       error: (erreur) => {
         console.log(`Erreur lors de la réservation: ${erreur}`);
+        this.reservationReussie = false;
       },
       complete: () => {}
     });
   }
 
-  calculerPrix(idSeance: number, nombrePlaces: number) {
-    const prix = this.seanceService['calculerPrixSeance'](idSeance);
-    const montantTotal = prix * nombrePlaces;
-    console.log(`Le prix de cette séance est de ${prix} euros par place, pour un total de ${montantTotal} euros.`);
+  calculerPrix() {
+    this.seanceService.calculerPrixSeance(this.seanceId).subscribe(prix => this.prix = prix);
   }
-
 }

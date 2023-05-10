@@ -1,14 +1,20 @@
-<!-- <form #reservationForm="ngForm" (ngSubmit)="reserverPlaces(idSeance.value, nombrePlaces.value); calculerPrix(idSeance.value, nombrePlaces.value)">
-    <label>
-      Séance ID:
-      <input type="number" name="idSeance" ngModel required>
-    </label>
-    <br>
-    <label>
-      Nombre de places:
-      <input type="number" name="nombrePlaces" ngModel required>
-    </label>
-    <br>
-    <button type="submit">Réserver</button>
-  </form> -->
-  <h1>Hello world</h1>
+<h2>Réserver des places pour la séance {{ seanceId }}</h2>
+
+<div>
+  <label for="nombre-places">Nombre de places :</label>
+  <input type="number" id="nombre-places" [(ngModel)]="nombrePlaces" min="0" onkeydown="return event.keyCode === 38 || event.keyCode === 40;" >
+</div>
+
+<div>
+  <p>Prix unitaire : {{ prix }} €</p>
+  <p>Prix  :  {{prix * nombrePlaces}} €</p>
+</div>
+
+<button (click)="reserverPlaces()">Réserver</button>
+
+<div *ngIf="reserverPlaces">
+  <p>Nombre de places réservées : {{ nombrePlaces }}</p>
+  <p>Séance : {{ seanceId }}</p>
+  <p>Prix total : {{ prix * nombrePlaces }} €</p>
+</div>
+

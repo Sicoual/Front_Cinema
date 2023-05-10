@@ -38,14 +38,19 @@ export class AfficherSeanceService {
   }
 
 
-  ajouterReservation(idSeance: number, nombrePlaces: number) : Observable<number> {
-    const url = `${this._url}/${idSeance}/reservations`;
+  ajouterReservation(id: number, nombrePlaces: number) : Observable<number> {
+    const url = `${this._url}/resa/${id}/${nombrePlaces}`;
     return this.http.post<number>(url, { nombrePlaces });
-
   }
 
-  getId(id: number): Observable<AfficherSeance> {
-    return this.http.get<AfficherSeance>(`${this._url}/${id}`);
+  getId(id: number): Observable<number> {
+    return this.http.get<number>(`${this._url}/${id}`);
   }
+  
+  calculerPrixSeance(id: number): Observable<number> {
+    const url = `${this._url}/prix/${id}`;
+    return this.http.get<number>(url);
+  }
+
 
   }
