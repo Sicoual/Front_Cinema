@@ -1,0 +1,24 @@
+<p>carrouseldebase works!</p>
+
+<div class="marquee-rtl">
+    <div>LES FILMS<b> A L'AFFICHE </b>EN CE MOMENT</div>
+  </div>
+
+<div class="container-fluid justify-content-center align-items-center centreeCar"  id="back">
+    <ngb-carousel>
+        <ng-template ngbSlide class="d-flex justify-content-center">
+      
+      <a href="/pageDeImage1">
+        <img src="assets/ImageTest/django_unchained.jpg" alt="Image 1" height="500px" class="slide-image" style="align-items: center;">
+      </a>
+                  
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="assets/ImageTest/image2.jpg" alt="Image 2" height="500px" class="slide-image">
+      
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="assets/ImageTest/le_chateau_dans_le_ciel.jpg" alt="Image 3" height="500px" class="slide-image">
+    </ng-template>
+  </ngb-carousel>
+</div>
