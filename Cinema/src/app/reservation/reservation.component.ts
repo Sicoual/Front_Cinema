@@ -12,8 +12,8 @@ export class ReservationComponent {
   seanceId!: number;
   nombrePlaces = 0;
   prix!: number;
-  placesRestantes!: number;
-  reservationReussie = false;
+  reservationReussie: boolean | null = null;
+  placesRestantes: number | null = null;
 
   constructor(
     private seanceService: AfficherSeanceService,
@@ -30,12 +30,14 @@ export class ReservationComponent {
     this.seanceService.ajouterReservation(this.seanceId, this.nombrePlaces).subscribe({
       next: (placesRestantes) => {
         console.log(`Réservation réussie. Places restantes: ${placesRestantes}`);
-        this.placesRestantes = placesRestantes;
         this.reservationReussie = true;
+        this.placesRestantes = placesRestantes;
+        this.router.navigate(['/resa/${id}/${nombrePlaces}']);
       },
       error: (erreur) => {
         console.log(`Erreur lors de la réservation: ${erreur}`);
         this.reservationReussie = false;
+        this.placesRestantes = null;
       },
       complete: () => {}
     });

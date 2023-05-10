@@ -12,9 +12,20 @@
 
 <button (click)="reserverPlaces()">Réserver</button>
 
-<div *ngIf="reserverPlaces">
-  <p>Nombre de places réservées : {{ nombrePlaces }}</p>
-  <p>Séance : {{ seanceId }}</p>
-  <p>Prix total : {{ prix * nombrePlaces }} €</p>
-</div>
+<div *ngIf="reservationReussie !== null">
+  <div *ngIf="reservationReussie === true && placesRestantes !== null && placesRestantes >= 0">
+    <p>Nombre de places réservées : {{ nombrePlaces }}</p>
+    <p>Séance : {{ seanceId }}</p>
+    <p>Prix total : {{ prix * nombrePlaces }} €</p>
+    <p>Places restantes : {{ placesRestantes }}</p>
+  </div>
+  
 
+  <div *ngIf="!reservationReussie">
+    <p>La réservation a échoué.</p>
+  </div>
+
+  <div *ngIf="reservationReussie && placesRestantes !== null && placesRestantes < 0">
+    <p>Il n'y a plus de places disponibles.</p>
+  </div>
+</div>
