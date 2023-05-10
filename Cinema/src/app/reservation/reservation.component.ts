@@ -8,8 +8,7 @@ import { AfficherSeanceService } from '../service/afficher-seance.service';
 })
 export class ReservationComponent {
 
-  // idSeance: number;
-  // nombrePlaces: number;
+
 
   constructor(private seanceService: AfficherSeanceService) { }
 
