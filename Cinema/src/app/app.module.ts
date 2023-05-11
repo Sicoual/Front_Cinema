@@ -6,12 +6,15 @@ import { PageDeImage1Component } from './page-de-image1/page-de-image1.component
 import { InfosFilmComponent } from './infos-film/infos-film.component';
 import { FilmService } from './film.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     InfosFilmComponent,
+    HeaderComponent,
     PageDeImage1Component
     ],
   
@@ -19,8 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     
     BrowserModule,
     AppRoutingModule,
-     HttpClientModule
-
+     HttpClientModule,
+     FormsModule,
+      
   ],
  
   providers: [FilmService],
