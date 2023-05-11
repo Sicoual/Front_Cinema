@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageDeImage1Component } from './page-de-image1/page-de-image1.component';
 import { InfosFilmComponent } from './infos-film/infos-film.component';
-import { FilmService } from './film.service';
+import { FilmService } from './services/film/film.service';
 import { HttpClientModule } from '@angular/common/http';
 
 
