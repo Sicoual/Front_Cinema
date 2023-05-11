@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AfficherSeanceComponent } from './afficher-seance/afficher-seance.component';
-import { AfficherSeanceService } from './service/afficher-seance.service';
+import { AfficherSeanceService } from './services/afficher-seance.service';
 import { ReservationComponent } from './reservation/reservation.component';
 
 

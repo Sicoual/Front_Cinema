@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { AfficherSeanceService } from '../service/afficher-seance.service';
+import { AfficherSeanceService } from '../services/afficher-seance.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-reservation',
@@ -8,14 +9,15 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./reservation.component.css']
 })
 export class ReservationComponent {
-
+  
   seanceId!: number;
   nombrePlaces = 0;
   prix!: number;
   reservationReussie: boolean | null = null;
-  placesRestantes: number | null = null;
+  placesRestantes! : number;
 
   constructor(
+    private http: HttpClient,
     private seanceService: AfficherSeanceService,
     private route: ActivatedRoute,
     private router: Router
@@ -37,7 +39,7 @@ export class ReservationComponent {
       error: (erreur) => {
         console.log(`Erreur lors de la réservation: ${erreur}`);
         this.reservationReussie = false;
-        this.placesRestantes = null;
+        this.placesRestantes = 0;
       },
       complete: () => {}
     });
