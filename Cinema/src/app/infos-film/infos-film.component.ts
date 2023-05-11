@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Film } from '../services/film/film';
 import { FilmService } from '../services/film/film.service';
 import { AfficherSeance } from '../services/seance/afficher-seance';
@@ -26,7 +26,12 @@ export class InfosFilmComponent implements OnInit {
     bandeAnnonce: '',
   };
 
-  constructor(public filmService: FilmService, private router: Router) {}
+  constructor(
+    public filmService: FilmService, 
+    private router: Router,
+    private route: ActivatedRoute,
+
+    ) {}
 
   voirBA = false;
   // voirBa() {
@@ -37,18 +42,21 @@ export class InfosFilmComponent implements OnInit {
   filmLien!: string;
 
   ngOnInit() {
-    this.filmService.getFilmById(1).subscribe({
-      next: (film) => {
-        this.film = film;
-        this.afficheLien = `assets/images/${this.film.id}.jpg`;
-        this.filmLien = `assets/bandeAnnonces/${this.film.id}.mp4`;
-      },
-      error: (error) => {
-        console.log(error);
-      },
-      complete: () => {
-        this.voirBA = true;
-      },
+    this.route.params.subscribe((params: Params) => {
+      const id = +params['id'];
+      this.filmService.getFilmById(id).subscribe({
+        next: (film) => {
+          this.film = film;
+          this.afficheLien = `assets/images/${this.film.id}.jpg`;
+          this.filmLien = `assets/bandeAnnonces/${this.film.id}.mp4`;
+        },
+        error: (error) => {
+          console.log(error);
+        },
+        complete: () => {
+          this.voirBA = true;
+        },
+      });
     });
   }
 
