@@ -2,6 +2,7 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Film } from '../services/film/film';
 import { FilmService } from '../services/film/film.service';
+import { AfficherSeance } from '../services/seance/afficher-seance';
 
 
 @Component({
@@ -49,5 +50,9 @@ export class InfosFilmComponent implements OnInit {
         this.voirBA = true;
       },
     });
+  }
+
+  AllerAListeSeances() {
+    this.router.navigate(['/seance', this.film.id]);
   }
 }

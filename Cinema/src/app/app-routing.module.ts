@@ -7,7 +7,7 @@ import { InfosFilmComponent } from './infos-film/infos-film.component';
 
 //redirect to = mettre sur la page principal => carroussel
 const routes: Routes = [
-  { path: '', redirectTo: '/afficher-seance', pathMatch: 'full' },
+  { path: '', redirectTo: '/infos', pathMatch: 'full' },
   { path: 'afficher-seance', component: AfficherSeanceComponent },
   { path: 'reservation/:id', component: ReservationComponent },
   {path:"infos", component:InfosFilmComponent},
