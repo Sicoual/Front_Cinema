@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AfficherSeanceService } from '../service/afficher-seance.service';
+import { AfficherSeanceService } from '../services/seance/afficher-seance.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 

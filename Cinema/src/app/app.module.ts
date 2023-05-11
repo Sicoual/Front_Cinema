@@ -6,11 +6,10 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AfficherSeanceComponent } from './afficher-seance/afficher-seance.component';
-import { AfficherSeanceService } from './service/afficher-seance.service';
+import { AfficherSeanceService } from './services/seance/afficher-seance.service';
 import { ReservationComponent } from './reservation/reservation.component';
-import { PageDeImage1Component } from './page-de-image1/page-de-image1.component';
 import { InfosFilmComponent } from './infos-film/infos-film.component';
-import { FilmService } from './film.service';
+import { FilmService } from './services/film/film.service';
 import { HeaderComponent } from './header/header.component';
 
 
@@ -20,7 +19,6 @@ import { HeaderComponent } from './header/header.component';
     AppComponent,
     InfosFilmComponent,
     HeaderComponent,
-    PageDeImage1Component,
     AfficherSeanceComponent,
     ReservationComponent,
     ],

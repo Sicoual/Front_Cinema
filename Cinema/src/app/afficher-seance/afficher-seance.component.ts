@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AfficherSeance } from '../service/afficher-seance';
-import { AfficherSeanceService } from '../service/afficher-seance.service';
+import { AfficherSeance } from '../services/seance/afficher-seance';
+import { AfficherSeanceService } from '../services/seance/afficher-seance.service';
 
 @Component({
   selector: 'app-afficher-seance',
