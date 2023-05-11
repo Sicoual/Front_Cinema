@@ -1,0 +1,38 @@
+<p>carrousel des affiches works!</p>
+
+<div class="marquee-rtl">
+    <div>LES FILMS<b> A L'AFFICHE </b>EN CE MOMENT</div>
+  </div>
+
+  <div class="carousel" style="text-align: center; background-color: lightgreen;">
+    <div class="carousel-items" style="display: flex; align-items: center;">
+      <!-- boucle sur chaque image -->
+      <div class="carousel-item" *ngFor="let image of images; let i = index" [ngClass]="[getActiveClass(i), 'center']">
+       <a [routerLink]="['/infos',i+1]">
+        <img src="assets/images/{{ image }}" alt="Slide {{ i + 1 }}" style="height: 500px; width: 350px;">
+    </a>  
+    </div>
+    </div>
+  </div>
+  
+<br><br>
+<hr>
+<!-- <br><br>
+  <div class="marquee-rtl">
+    <div>ET VOICI LES FILMS A VENIR DANS LES PROCHAINE SEMAINES</div>
+  </div> -->
+
+<!-- <div class="carousel" style=" text-align: center;background-color: lightsalmon;">
+    <div class="carousel-items" style="display: flex; align-items: center;">
+      <div class="carousel-item" [ngClass]="[getActiveClass(0), 'center']">
+        <img src="{{ slides2[1].image }}" alt="Slide 1" style="height: 500px; width: 350px;">
+      </div>
+      <div class="carousel-item" [ngClass]="[getActiveClass(1), 'center']">
+        <img src="{{ slides2[2].image }}" alt="Slide 2" style="height: 500px; width: 350px;">
+      </div>
+      <div class="carousel-item" [ngClass]="[getActiveClass(2), 'center']">
+        <img src="{{ slides2[3].image }}" alt="Slide 3" style="height: 500px; width: 350px;">
+      </div>
+    </div>
+  </div> -->
+  
