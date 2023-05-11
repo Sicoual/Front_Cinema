@@ -9,13 +9,32 @@ import { FilmService } from 'src/app/film.service';
   templateUrl: './grille-films.component.html',
   styleUrls: ['./grille-films.component.css']
 })
+
 export class GrilleFilmsComponent implements OnInit {
   films: Film[] = []; 
 
+  public film : Film = {
+    id: 1,
+    nom: '',
+    realisateur: '',
+    acteur_1: '',
+    acteur_2: '',
+    duree: '',
+    dateSortie: new Date(),
+    synopsis: '',
+    categorie: '',
+    langue: '',
+    bandeAnnonce: '',
+    image: '',
+  }
+
   constructor(private filmService : FilmService, private router : Router) { }
 
-  ngOnInit(): void {
+  afficheLien!: string;
+
+  ngOnInit() {
     this.getListeFilm();
+    this.afficheLien = `assets/images/${this.film.id}.jpg`;
   }
 
   getListeFilm() {

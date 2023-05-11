@@ -1,0 +1,66 @@
+/* Styles de la grille de films */
+.grille-films {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Styles de la carte de film */
+  .film-card {
+    display: flex;
+    width: calc(50% - 10px);
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles de l'image du film */
+  .film-image {
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  
+  .film-title strong {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .film-director {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .film-actors {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .film-duration {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .film-release-date {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .film-synopsis {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .film-category {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .film-language {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
