@@ -1,0 +1,43 @@
+<!-- Bloc 1 : Bandeau haut de page, Affichage informations film -->
+<div class="film-container">
+  <!-- Affiche du film (à gauche)-->
+  <div class="film-image">
+    <img [src]="afficheLien" alt="{{ film.nom }}" />
+  </div>
+  <!-- Informations du film (à droite)-->
+  <div class="film-details">
+    <h2>{{ film.nom }}</h2>
+    <p>{{ film.synopsis }}</p>
+    <ul>
+      <li><strong>Durée :</strong> {{ film.duree }}</li>
+      <li><strong>Langue :</strong> {{ film.langue }}</li>
+      <li><strong>Catégorie :</strong> {{ film.categorie }}</li>
+    </ul>
+  </div>
+</div>
+<!-- Bande annonce -->
+<div class="trailer-container">
+  <video controls>
+    <source [src]="'assets/bandeAnnonces/1.mp4'" />
+  </video>
+</div>
+<div class="trailer-container">
+  <video controls>
+    <source src="https://www.youtube.com/watch?v=ukCJkQROM5k" />
+  </video>
+</div>
+<div class="trailer-container">
+  <video controls>
+    <source src="{{film.bandeAnnonce}}" />
+  </video>
+</div>
+<!-- <div class="trailer-container">
+  <video controls>
+    <source [src]="filmLien"/>
+  </video>
+</div> -->
+<!-- Bouton de réservation -->
+<div class="text-center">
+  <input class="btn btn-primary" type="submit" value="Accéder aux réservations pour ce film">
+</div>
+
