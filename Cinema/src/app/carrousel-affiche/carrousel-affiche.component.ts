@@ -18,9 +18,9 @@ export class CarrouselAfficheComponent {
   ];
   currentSlide2 = 0;
    slides2 = [
-     'spider.jpg' ,
-     'fastF.jpg' ,
-     'fraise.jpg', 
+     'image1.jpg' ,
+     'image2.jpg' ,
+     'image3.jpg', 
    ];
 
   constructor() { }
@@ -29,7 +29,7 @@ export class CarrouselAfficheComponent {
     setInterval(() => {
       this.nextSlide();
       this.nextSlideBis();
-    }, 3000);
+    }, 4000);
   }
 
   nextSlide(): void {
