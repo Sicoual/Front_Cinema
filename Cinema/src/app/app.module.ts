@@ -31,12 +31,11 @@ import { GrilleFilmsComponent } from './voirTousLesFilms/grille-films/grille-fil
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
  
   providers: [
-    HttpClientModule,
-    FormsModule,
     FilmService,
     AfficherSeanceService,
   ],
