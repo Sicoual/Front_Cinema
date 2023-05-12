@@ -1,18 +1,17 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Film } from '../film';
-import { FilmService } from '../film.service';
+import { Film } from '../services/film/film';
+import { FilmService } from '../services/film/film.service';
+
 
 @Component({
   selector: 'app-infos-film',
   templateUrl: './infos-film.component.html',
-  styleUrls: ['./infos-film.component.css']
+  styleUrls: ['./infos-film.component.css'],
 })
-
 @Injectable()
 export class InfosFilmComponent implements OnInit {
-
-  public film : Film = {
+  public film: Film = {
     id: 0,
     nom: '',
     realisateur: '',
@@ -24,18 +23,31 @@ export class InfosFilmComponent implements OnInit {
     categorie: '',
     langue: '',
     bandeAnnonce: '',
-  }
+  };
 
-  constructor (public filmService : FilmService, private router : Router) {}
-  
+  constructor(public filmService: FilmService, private router: Router) {}
+
+  voirBA = false;
+  // voirBa() {
+  //   this.voirBA = !this.voirBA;
+  // }
+
   afficheLien!: string;
   filmLien!: string;
 
-  ngOnInit(){
-    this.filmService.getFilmById(5).subscribe((film) => {
-      this.film = film;
-      this.afficheLien = `assets/images/${this.film.id}.jpg`;
-      this.filmLien = `assets/bandeAnnonces/${this.film.id}.mp4`;
+  ngOnInit() {
+    this.filmService.getFilmById(1).subscribe({
+      next: (film) => {
+        this.film = film;
+        this.afficheLien = `assets/images/${this.film.id}.jpg`;
+        this.filmLien = `assets/bandeAnnonces/${this.film.id}.mp4`;
+      },
+      error: (error) => {
+        console.log(error);
+      },
+      complete: () => {
+        this.voirBA = true;
+      },
     });
   }
 }
