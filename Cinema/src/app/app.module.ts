@@ -11,6 +11,7 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { InfosFilmComponent } from './infos-film/infos-film.component';
 import { FilmService } from './services/film/film.service';
 import { HeaderComponent } from './header/header.component';
+import { CarrouselAfficheComponent } from './carrousel-affiche/carrousel-affiche.component';
 import { FooterComponent } from './footer/footer.component';
 
 
@@ -22,6 +23,7 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     AfficherSeanceComponent,
     ReservationComponent,
+    CarrouselAfficheComponent,
     FooterComponent,
     ],
   
