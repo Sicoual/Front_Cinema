@@ -13,7 +13,7 @@ import { AfficherSeance } from '../services/seance/afficher-seance';
 @Injectable()
 export class InfosFilmComponent implements OnInit {
   public film: Film = {
-    id: 0,
+    id: 0 ,
     nom: '',
     realisateur: '',
     acteur_1: '',

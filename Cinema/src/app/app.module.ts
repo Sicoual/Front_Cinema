@@ -11,25 +11,28 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { InfosFilmComponent } from './infos-film/infos-film.component';
 import { FilmService } from './services/film/film.service';
 import { HeaderComponent } from './header/header.component';
-
+import { CarrouselAfficheComponent } from './carrousel-affiche/carrousel-affiche.component';
+import { FooterComponent } from './footer/footer.component';
+import { GrilleFilmsComponent } from './voirTousLesFilms/grille-films/grille-films.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    GrilleFilmsComponent,
     InfosFilmComponent,
     HeaderComponent,
     AfficherSeanceComponent,
     ReservationComponent,
+    CarrouselAfficheComponent,
+    FooterComponent,
     ],
   
   imports: [
-    
     BrowserModule,
     AppRoutingModule,
-     HttpClientModule,
-     FormsModule,
-      
+    HttpClientModule,
+    FormsModule,
   ],
  
   providers: [
