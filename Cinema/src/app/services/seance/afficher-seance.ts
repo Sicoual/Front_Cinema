@@ -3,7 +3,7 @@ id : number;
 date : any;
 heure : any;
 nbPlacesReservees : any;
-film : number;
+film : any;
 salle : number;
 
 }

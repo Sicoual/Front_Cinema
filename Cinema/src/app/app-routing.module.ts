@@ -10,7 +10,7 @@ import { CarrouselAfficheComponent } from './carrousel-affiche/carrousel-affiche
 //redirect to = mettre sur la page principal => carroussel
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
-  { path: 'afficher-seance', component: AfficherSeanceComponent },
+  { path: 'afficher-seance/:id', component: AfficherSeanceComponent },
   { path: 'reservation/:id', component: ReservationComponent },
   { path: 'film/:id', component: InfosFilmComponent },
   { path: 'infos/:id', component:InfosFilmComponent},

@@ -1,4 +1,5 @@
 export interface Film {
+
     id : number,
 	nom : string,
 	realisateur : string,

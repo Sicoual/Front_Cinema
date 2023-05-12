@@ -5,6 +5,7 @@
       <th scope="col-md-6">date</th>
       <th scope="col-md-6">heure</th>
       <th scope="col-md-4">nb_places_reservees</th>
+      <th scope="col-md-4">id film</th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,7 @@
       <th>{{seance.date}}</th>
       <th>{{seance.heure}}</th>
       <th>{{seance.nbPlacesReservees}}</th>
+      <th>{{seance.film.id}}</th>
       <td>
         <button class="btn btn-primary" (click)="AllerAReservation(seance)">Réserver</button>
       </td>
