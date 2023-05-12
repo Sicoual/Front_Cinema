@@ -1,20 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-<<<<<<<< HEAD:Cinema/src/app/voirTousLesFilms/grille-films/grille-films.component.spec.ts
-import { GrilleFilmsComponent } from './grille-films.component';
-
-describe('GrilleFilmsComponent', () => {
-  let component: GrilleFilmsComponent;
-  let fixture: ComponentFixture<GrilleFilmsComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ GrilleFilmsComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(GrilleFilmsComponent);
-========
 import { FooterComponent } from './footer.component';
 
 describe('FooterComponent', () => {
@@ -28,7 +13,6 @@ describe('FooterComponent', () => {
     .compileComponents();
 
     fixture = TestBed.createComponent(FooterComponent);
->>>>>>>> dev:Cinema/src/app/footer/footer.component.spec.ts
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
