@@ -15,7 +15,7 @@ export class GrilleFilmsComponent implements OnInit {
   films: Film[] = []; 
 
   public film : Film = {
-    id: 1,
+    id: 0,
     nom: '',
     realisateur: '',
     acteur_1: '',
@@ -43,6 +43,10 @@ export class GrilleFilmsComponent implements OnInit {
       error : (erreur) => { console.log(erreur)},
       complete : () => {},
     });
+  }
+
+  afficherInfosFilm(id: number) {
+    this.router.navigate(['infos', id]);
   }
 
 

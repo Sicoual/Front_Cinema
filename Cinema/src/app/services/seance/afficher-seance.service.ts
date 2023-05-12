@@ -53,4 +53,9 @@ export class AfficherSeanceService {
   }
 
 
+  getSeancesByFilmId(filmId: number): Observable<AfficherSeance[]> {
+    const url = `${this._url}?id_film=${filmId}`;
+    return this.http.get<AfficherSeance[]>(url);
+  }
+
   }
