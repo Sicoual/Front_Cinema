@@ -9,12 +9,14 @@ import { CarrouselAfficheComponent } from './carrousel-affiche/carrousel-affiche
 
 //redirect to = mettre sur la page principal => carroussel
 const routes: Routes = [
-  {path: "accueil", component: CarrouselAfficheComponent},
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
-  { path: "filmographie", component: GrilleFilmsComponent },
   { path: 'afficher-seance', component: AfficherSeanceComponent },
   { path: 'reservation/:id', component: ReservationComponent },
-  {path:"infos/:id", component:InfosFilmComponent},
+  { path: 'film/:id', component: InfosFilmComponent },
+  { path: 'infos/:id', component:InfosFilmComponent},
+  {path: "accueil", component: CarrouselAfficheComponent},
+  { path: "filmographie", component: GrilleFilmsComponent }
+
   ];
 
 
