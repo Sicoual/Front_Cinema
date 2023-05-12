@@ -12,30 +12,16 @@
       <li><strong>Durée :</strong> {{ film.duree }}</li>
       <li><strong>Langue :</strong> {{ film.langue }}</li>
       <li><strong>Catégorie :</strong> {{ film.categorie }}</li>
+      <!-- <li><button class="btn btn-primary" (click)="voirBa()">Visionner la bande annonce</button></li> -->
     </ul>
   </div>
 </div>
 <!-- Bande annonce -->
-<div class="trailer-container">
-  <video controls>
-    <source [src]="'assets/bandeAnnonces/1.mp4'" />
-  </video>
-</div>
-<div class="trailer-container">
-  <video controls>
-    <source src="https://www.youtube.com/watch?v=ukCJkQROM5k" />
-  </video>
-</div>
-<div class="trailer-container">
-  <video controls>
-    <source src="{{film.bandeAnnonce}}" />
-  </video>
-</div>
-<!-- <div class="trailer-container">
+<div *ngIf="voirBA" class="trailer-container">
   <video controls>
     <source [src]="filmLien"/>
   </video>
-</div> -->
+</div>
 <!-- Bouton de réservation -->
 <div class="text-center">
   <input class="btn btn-primary" type="submit" value="Accéder aux réservations pour ce film">

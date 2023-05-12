@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Film } from 'src/app/film';
-import { FilmService } from 'src/app/film.service';
+import { Film } from 'src/app/services/film/film';
+import { FilmService } from 'src/app/services/film/film.service';
+
 
 
 @Component({
@@ -24,8 +25,7 @@ export class GrilleFilmsComponent implements OnInit {
     synopsis: '',
     categorie: '',
     langue: '',
-    bandeAnnonce: '',
-    image: '',
+    bandeAnnonce: ''
   }
 
   constructor(private filmService : FilmService, private router : Router) { }
