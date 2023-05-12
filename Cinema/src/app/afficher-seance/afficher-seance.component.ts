@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AfficherSeance } from '../services/seance/afficher-seance';
 import { AfficherSeanceService } from '../services/seance/afficher-seance.service';
 
@@ -12,18 +12,10 @@ export class AfficherSeanceComponent {
 
   seances : AfficherSeance[] = [];
 
-  constructor(private seanceService : AfficherSeanceService, private router : Router, private route: ActivatedRoute){}
-
+  constructor(private seanceService : AfficherSeanceService, private router : Router){}
 
   ngOnInit(): void {
-    // Récupération de l'id du film à partir de l'URL
-    const idFilm = this.route.snapshot.paramMap.get('id');
-  
-    // Récupération de toutes les séances
     this.getListeSeances();
-  
-    // Filtrer la liste des séances pour n'afficher que celles avec un id de film correspondant
-    this.seances = this.seances.filter((seance) => seance.film.id === idFilm);
   }
 
   getListeSeances(){

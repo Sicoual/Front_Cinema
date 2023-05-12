@@ -13,7 +13,6 @@ import { AfficherSeance } from '../services/seance/afficher-seance';
 @Injectable()
 export class InfosFilmComponent implements OnInit {
 
-  selectedFilmId!: number; 
   public film: Film = {
     id: 0 ,
     nom: '',
@@ -44,12 +43,12 @@ export class InfosFilmComponent implements OnInit {
   filmLien!: string;
 
   ngOnInit() {
-    
     this.route.params.subscribe((params: Params) => {
-      const id = +params['id'];
-      this.filmService.getFilmById(id).subscribe({
+      const idFilm = params['id'];
+      this.filmService.getFilmById(idFilm).subscribe({
         next: (film) => {
           this.film = film;
+          //this.seances = this.seances.filter((seance) => seance.film.id === idFilm);
           this.afficheLien = `assets/images/${this.film.id}.jpg`;
           this.filmLien = `assets/bandeAnnonces/${this.film.id}.mp4`;
         },
