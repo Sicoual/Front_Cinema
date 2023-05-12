@@ -18,7 +18,7 @@ export class FilmService {
     synopsis: '',
     categorie: '',
     langue: '',
-    bandeAnnonce: '',
+    bandeAnnonce: ''
     // listeSeances[] : Seance,
   };
   

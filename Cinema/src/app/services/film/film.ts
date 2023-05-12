@@ -9,6 +9,7 @@ export interface Film {
 	synopsis : string,
 	categorie : string,
 	langue : string,
-	bandeAnnonce : string,
+	bandeAnnonce : string
 	// listeSeances[] : Seance,
+
 }

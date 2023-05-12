@@ -13,12 +13,13 @@ import { FilmService } from './services/film/film.service';
 import { HeaderComponent } from './header/header.component';
 import { CarrouselAfficheComponent } from './carrousel-affiche/carrousel-affiche.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { GrilleFilmsComponent } from './voirTousLesFilms/grille-films/grille-films.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    GrilleFilmsComponent,
     InfosFilmComponent,
     HeaderComponent,
     AfficherSeanceComponent,
@@ -28,12 +29,10 @@ import { FooterComponent } from './footer/footer.component';
     ],
   
   imports: [
-    
     BrowserModule,
     AppRoutingModule,
-     HttpClientModule,
-     FormsModule,
-      
+    HttpClientModule,
+    FormsModule,
   ],
  
   providers: [
