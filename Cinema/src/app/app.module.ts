@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { CarrouselAfficheComponent } from './carrousel-affiche/carrousel-affiche.component';
 import { FooterComponent } from './footer/footer.component';
 import { GrilleFilmsComponent } from './voirTousLesFilms/grille-films/grille-films.component';
+import { ProchainementComponent } from './prochainement/prochainement.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { GrilleFilmsComponent } from './voirTousLesFilms/grille-films/grille-fil
     ReservationComponent,
     CarrouselAfficheComponent,
     FooterComponent,
+    ProchainementComponent,
     ],
   
   imports: [

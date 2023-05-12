@@ -20,9 +20,9 @@ export class CarrouselAfficheComponent {
    slides2 = [
     
      { id: 1, image: '' },
-     { id: 2, image: 'assets/images/imageFilmAVenir/spider.jpg' },
-     { id: 3, image: 'assets/images/imageFilmAVenir/fastF.jpg' },
-     { id: 4, image: 'assets/images/imageFilmAVenir/fraise.jpg' }
+     { id: 2, image: 'assets/imageFilmAVenir/image1.jpg' },
+     { id: 3, image: 'assets/imageFilmAVenir/image2.jpg' },
+     { id: 4, image: 'assets/imageFilmAVenir/image3.jpg' }
    ];
 
   constructor() { }
