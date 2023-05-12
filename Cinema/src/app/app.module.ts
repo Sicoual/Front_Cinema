@@ -22,7 +22,7 @@ import { CarrouselAfficheComponent } from './carrousel-affiche/carrousel-affiche
     HeaderComponent,
     AfficherSeanceComponent,
     ReservationComponent,
-    CarrouselAfficheComponent,
+    CarrouselAfficheComponent
     ],
   
   imports: [

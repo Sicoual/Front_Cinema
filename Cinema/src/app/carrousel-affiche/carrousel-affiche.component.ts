@@ -17,13 +17,13 @@ export class CarrouselAfficheComponent {
     '11.jpg','12.jpg','13.jpg','14.jpg','15.jpg',
   ];
 
-  // slides2 = [
+   slides2 = [
     
-  //   { id: 1, image: '' },
-  //   { id: 2, image: 'assets/images/imageFilmAVenir/spider.jpg' },
-  //   { id: 3, image: 'assets/images/imageFilmAVenir/fastF.jpg' },
-  //   { id: 4, image: 'assets/images/imageFilmAVenir/fraise.jpg' }
-  // ];
+     { id: 1, image: '' },
+     { id: 2, image: 'assets/images/imageFilmAVenir/spider.jpg' },
+     { id: 3, image: 'assets/images/imageFilmAVenir/fastF.jpg' },
+     { id: 4, image: 'assets/images/imageFilmAVenir/fraise.jpg' }
+   ];
 
   constructor() { }
 
