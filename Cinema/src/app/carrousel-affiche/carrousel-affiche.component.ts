@@ -16,13 +16,11 @@ export class CarrouselAfficheComponent {
     '6.jpg','7.jpg','8.jpg','9.jpg','10.jpg',
     '11.jpg','12.jpg','13.jpg','14.jpg','15.jpg',
   ];
-
+  currentSlide2 = 0;
    slides2 = [
-    
-     { id: 1, image: '' },
-     { id: 2, image: 'assets/imageFilmAVenir/image1.jpg' },
-     { id: 3, image: 'assets/imageFilmAVenir/image2.jpg' },
-     { id: 4, image: 'assets/imageFilmAVenir/image3.jpg' }
+     'image1.jpg' ,
+     'image2.jpg' ,
+     'image3.jpg', 
    ];
 
   constructor() { }
@@ -30,7 +28,8 @@ export class CarrouselAfficheComponent {
   ngOnInit(): void {
     setInterval(() => {
       this.nextSlide();
-    }, 5000);
+      this.nextSlideBis();
+    }, 4000);
   }
 
   nextSlide(): void {
@@ -38,7 +37,18 @@ export class CarrouselAfficheComponent {
     this.currentSlide = (this.currentSlide + 1) % totalSlides;
   }
 
+  //refaire une nextslide et getactive classe en mettant imageFilmAVenir.lenght
   getActiveClass(index: number): string {
     return this.currentSlide === index ? 'active' : '';
+  }
+
+  nextSlideBis(): void {
+    const totalSlides2 = this.slides2.length;
+    this.currentSlide2 = (this.currentSlide2 + 1) % totalSlides2;
+  }
+
+  //refaire une nextslide et getactive classe en mettant imageFilmAVenir.lenght
+  getActiveClassBis(index: number): string {
+    return this.currentSlide2 === index ? 'active' : '';
   }
 }
