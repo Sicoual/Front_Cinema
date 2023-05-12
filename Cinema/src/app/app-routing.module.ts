@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'afficher-seance', component: AfficherSeanceComponent },
   { path: 'reservation/:id', component: ReservationComponent },
   { path: 'film/:id', component: InfosFilmComponent },
-  { path:"infos/:id", component:InfosFilmComponent},
+  { path: 'infos/:id', component:InfosFilmComponent},
   ];
 
 
