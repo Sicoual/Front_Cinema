@@ -15,6 +15,7 @@ export class ReservationComponent {
   prix!: number;
   reservationReussie: boolean | null = null;
   placesRestantes! : number;
+  seance: any; // Ajout de la variable seance
 
   constructor(
     private http: HttpClient,
@@ -26,6 +27,13 @@ export class ReservationComponent {
   ngOnInit(): void {
     this.seanceId = Number(this.route.snapshot.paramMap.get('id'));
     this.calculerPrix();
+    this.infSeance(); // Charger les détails de la séance pour afficher image
+  }
+
+  infSeance() { //methode seance pour charger les information d'une seance en fct de l'id et indirectement de film
+    this.seanceService.getId(this.seanceId).subscribe(seance => {
+      this.seance = seance;
+    });
   }
 
   reserverPlaces() {
@@ -47,5 +55,9 @@ export class ReservationComponent {
 
   calculerPrix() {
     this.seanceService.calculerPrixSeance(this.seanceId).subscribe(prix => this.prix = prix);
+  }
+
+  getImageSrc(filmId: number): string {
+    return `assets/images/${filmId}.jpg`; // Recupere l'id de l'image
   }
 }
