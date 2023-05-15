@@ -15,6 +15,7 @@ import { CarrouselAfficheComponent } from './carrousel-affiche/carrousel-affiche
 import { FooterComponent } from './footer/footer.component';
 import { GrilleFilmsComponent } from './voirTousLesFilms/grille-films/grille-films.component';
 import { ProchainementComponent } from './prochainement/prochainement.component';
+import { HorairesJourComponent } from './horaires-jour/horaires-jour.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ProchainementComponent } from './prochainement/prochainement.component'
     CarrouselAfficheComponent,
     FooterComponent,
     ProchainementComponent,
+    HorairesJourComponent,
     ],
   
   imports: [
