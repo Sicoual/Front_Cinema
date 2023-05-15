@@ -5,6 +5,7 @@ import { AfficherSeanceComponent } from './afficher-seance/afficher-seance.compo
 import { ReservationComponent } from './reservation/reservation.component';
 import { InfosFilmComponent } from './infos-film/infos-film.component';
 import { CarrouselAfficheComponent } from './carrousel-affiche/carrousel-affiche.component';
+import { PageContactsComponent } from './page-contacts/page-contacts.component';
 
 
 //redirect to = mettre sur la page principal => carroussel
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'film/:id', component: InfosFilmComponent },
   { path: 'infos/:id', component:InfosFilmComponent},
   {path: "accueil", component: CarrouselAfficheComponent},
-  { path: "filmographie", component: GrilleFilmsComponent }
+  { path: "filmographie", component: GrilleFilmsComponent },
+  { path: "contacts", component: PageContactsComponent }
 
   ];
 
