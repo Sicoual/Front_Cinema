@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AfficherSeance } from '../services/seance/afficher-seance';
 import { AfficherSeanceService } from '../services/seance/afficher-seance.service';
 
@@ -11,22 +11,36 @@ import { AfficherSeanceService } from '../services/seance/afficher-seance.servic
 export class AfficherSeanceComponent {
 
   seances : AfficherSeance[] = [];
+  filmId!: number;
+  
 
-  constructor(private seanceService : AfficherSeanceService, private router : Router){}
+  constructor(private seanceService : AfficherSeanceService, private router : Router, private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    this.getListeSeances();
+    this.route.params.subscribe((params: Params) => {
+      this.filmId = Number(params['id']);
+      this.getListeSeances();
+    });
   }
 
-  getListeSeances(){
+  getListeSeances() {
     this.seanceService.getAllSeances().subscribe({
-      next : (donnesseances)=>{ this.seances = donnesseances},
-      error : (erreur)=>{ console.log(erreur)},
-      complete : ()=>{}
+      next: (donneesSeances) => {
+    
+        this.seances = donneesSeances.filter((seance) => seance.film.id === this.filmId);
+      },
+      error: (erreur) => {
+        console.log(erreur);
+      },
+      complete: () => {}
     });
   }
 
   AllerAReservation(seance: AfficherSeance) {
     this.router.navigate(['/reservation', seance.id]);
+  }
+
+  getImageSrc(filmId: number): string {
+    return `assets/images/${filmId}.jpg`; // Remplacez "chemin/vers/images" par le chemin réel vers le dossier contenant les images des films
   }
 }

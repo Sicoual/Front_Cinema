@@ -15,7 +15,8 @@ import { CarrouselAfficheComponent } from './carrousel-affiche/carrousel-affiche
 import { FooterComponent } from './footer/footer.component';
 import { GrilleFilmsComponent } from './voirTousLesFilms/grille-films/grille-films.component';
 import { PageContactsComponent } from './page-contacts/page-contacts.component';
-
+import { ProchainementComponent } from './prochainement/prochainement.component';
+import { HorairesJourComponent } from './horaires-jour/horaires-jour.component';
 
 
 @NgModule({
@@ -29,6 +30,8 @@ import { PageContactsComponent } from './page-contacts/page-contacts.component';
     CarrouselAfficheComponent,
     FooterComponent,
     PageContactsComponent,
+    ProchainementComponent,
+    HorairesJourComponent,
     ],
   
   imports: [

@@ -16,21 +16,20 @@ export class CarrouselAfficheComponent {
     '6.jpg','7.jpg','8.jpg','9.jpg','10.jpg',
     '11.jpg','12.jpg','13.jpg','14.jpg','15.jpg',
   ];
-
-   slides2 = [
-    
-     { id: 1, image: '' },
-     { id: 2, image: 'assets/images/imageFilmAVenir/spider.jpg' },
-     { id: 3, image: 'assets/images/imageFilmAVenir/fastF.jpg' },
-     { id: 4, image: 'assets/images/imageFilmAVenir/fraise.jpg' }
-   ];
+  currentSlide2 = 0;
+  slides2 = [
+    'image1.jpg' ,
+    'image2.jpg' ,
+    'image3.jpg', 
+  ];
 
   constructor() { }
 
   ngOnInit(): void {
     setInterval(() => {
       this.nextSlide();
-    }, 5000);
+      this.nextSlideBis();
+    }, 4000);
   }
 
   nextSlide(): void {
@@ -38,7 +37,27 @@ export class CarrouselAfficheComponent {
     this.currentSlide = (this.currentSlide + 1) % totalSlides;
   }
 
+  previousSlide(): void {
+    const totalSlides = this.images.length;
+    this.currentSlide = (this.currentSlide - 1 + totalSlides) % totalSlides;
+  }
+
   getActiveClass(index: number): string {
     return this.currentSlide === index ? 'active' : '';
   }
+
+  nextSlideBis(): void {
+    const totalSlides2 = this.slides2.length;
+    this.currentSlide2 = (this.currentSlide2 + 1) % totalSlides2;
+  }
+
+  previousSlideBis(): void {
+    const totalSlides2 = this.slides2.length;
+    this.currentSlide2 = (this.currentSlide2 - 1 + totalSlides2) % totalSlides2;
+  }
+
+  getActiveClassBis(index: number): string {
+    return this.currentSlide2 === index ? 'active' : '';
+  }
 }
+

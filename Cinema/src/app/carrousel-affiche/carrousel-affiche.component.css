@@ -49,14 +49,14 @@
   
   .carrousel-arrow.prev {
     left: 20px;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/149/149222.png');
+    background-image: 'assets/images/fleches/icone-fleche-gauche-noir.png';
     background-size: contain;
     background-repeat: no-repeat;
   }
   
   .carrousel-arrow.next {
     right: 20px;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/149/149220.png');
+    background-image: 'assets/images/fleches/icone-fleche-gauche-noir.png';
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -153,4 +153,18 @@
     transform: translate(-100%);
   }
 }
-  
+
+.carousel-boutton {
+  border-radius: 50%;
+  padding: 10px;
+  background-color: lightgray;
+  border: none;
+  cursor: pointer;
+}
+.carousel {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: lightgreen;
+}

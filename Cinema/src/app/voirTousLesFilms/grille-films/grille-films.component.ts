@@ -13,9 +13,10 @@ import { FilmService } from 'src/app/services/film/film.service';
 
 export class GrilleFilmsComponent implements OnInit {
   films: Film[] = []; 
+  afficheLien!: string;
 
   public film : Film = {
-    id: 1,
+    id: 0,
     nom: '',
     realisateur: '',
     acteur_1: '',
@@ -29,12 +30,10 @@ export class GrilleFilmsComponent implements OnInit {
   }
 
   constructor(private filmService : FilmService, private router : Router) { }
-
-  afficheLien!: string;
-
+  
   ngOnInit() {
     this.getListeFilm();
-    this.afficheLien = `assets/images/${this.film.id}.jpg`;
+    // this.afficheLien = `assets/images/${this.film.id}.jpg`;
   }
 
   getListeFilm() {
@@ -45,7 +44,31 @@ export class GrilleFilmsComponent implements OnInit {
     });
   }
 
+  afficherInfosFilm(id: number) {
+    this.router.navigate(['infos', id]);
+  }
 
+  onMouseEnter(film: Film) {
+    this.film = film;
+    this.afficheLien = `assets/images/${this.film.id}.jpg`;
+  }
+
+  onMouseLeave() {
+    this.film = {
+      id: 0,
+      nom: '',
+      realisateur: '',
+      acteur_1: '',
+      acteur_2: '',
+      duree: '',
+      dateSortie: new Date(),
+      synopsis: '',
+      categorie: '',
+      langue: '',
+      bandeAnnonce: ''
+    };
+    this.afficheLien = '';
+  }
 
 
 
