@@ -16,7 +16,11 @@ export class AfficherSeanceService {
     date : 0,
     heure : 0,
     nbPlacesReservees : 0,
-    film : 0,
+    film : {
+      id: 0,
+      nom: '',
+      duree: '',
+  },
     salle : 0
   }
 
@@ -52,5 +56,15 @@ export class AfficherSeanceService {
     return this.http.get<number>(url);
   }
 
+
+  getSeancesByFilmId(filmId: number): Observable<AfficherSeance[]> {
+    const url = `${this._url}?id_film=${filmId}`;
+    return this.http.get<AfficherSeance[]>(url);
+  }
+
+  getSeancesByDate(date: string): Observable<AfficherSeance[]> {
+    const url = `${this._url}/date/${date}`;
+    return this.http.get<AfficherSeance[]>(url);
+  }
 
   }

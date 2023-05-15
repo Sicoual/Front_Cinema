@@ -1,7 +1,7 @@
 <h1>En ce moment à l'affiche</h1>
 
 <div class="grille-films">
-  <div class="film-card" *ngFor="let film of films">
+  <div class="film-card" *ngFor="let film of films" (click)="afficherInfosFilm(film.id)">
     <img [src]="'assets/images/' + film.id + '.jpg'" alt="{{ film.nom }}" class="film-image">
       <div class="film-info">
         <h2 class="film-title"><strong>{{ film.nom }}</strong></h2>
@@ -16,5 +16,6 @@
         <!-- <p class="film-showtimes">Séances : {{ film.seance }}</p> -->
       </div>
     </div>
-  </div>
+</div>
+
   

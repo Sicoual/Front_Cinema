@@ -4,18 +4,24 @@
       <th scope="col-md-2">id</th>
       <th scope="col-md-6">date</th>
       <th scope="col-md-6">heure</th>
-      <th scope="col-md-4">nb_places_reservees</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let seance of seances">
-      <th>{{seance.id}}</th>
-      <th>{{seance.date}}</th>
-      <th>{{seance.heure}}</th>
-      <th>{{seance.nbPlacesReservees}}</th>
-      <td>
-        <button class="btn btn-primary" (click)="AllerAReservation(seance)">Réserver</button>
-      </td>
-    </tr>
+    <ng-container *ngIf="seances&& seances.length">
+      <tr *ngFor="let seance of seances">
+        <td>{{seance.id}}</td>
+        <td>{{seance.date}}</td>
+        <td>{{seance.heure}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="AllerAReservation(seance)">Réserver</button>
+        </td>
+      </tr>
+    </ng-container>
+    <ng-container *ngIf="!seances|| !seances.length">
+      <tr>
+        <td colspan="5" class="text-center">Aucune séance disponible</td>
+      </tr>
+    </ng-container>
   </tbody>
-</table>
+  
+
