@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { CarrouselAfficheComponent } from './carrousel-affiche/carrousel-affiche.component';
 import { FooterComponent } from './footer/footer.component';
 import { GrilleFilmsComponent } from './voirTousLesFilms/grille-films/grille-films.component';
+import { PageContactsComponent } from './page-contacts/page-contacts.component';
 import { ProchainementComponent } from './prochainement/prochainement.component';
 import { HorairesJourComponent } from './horaires-jour/horaires-jour.component';
 
@@ -28,6 +29,7 @@ import { HorairesJourComponent } from './horaires-jour/horaires-jour.component';
     ReservationComponent,
     CarrouselAfficheComponent,
     FooterComponent,
+    PageContactsComponent,
     ProchainementComponent,
     HorairesJourComponent,
     ],
