@@ -26,6 +26,7 @@ export class InfosFilmComponent implements OnInit {
     langue: '',
     bandeAnnonce: '',
   };
+seance: any;
 
   constructor(
     public filmService: FilmService, 
