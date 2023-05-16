@@ -1,0 +1,102 @@
+ 
+  /* Défilement de droite à gauche */
+  .marquee-rtl {
+    overflow: hidden; /* important */
+    width: 100%; 
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #e1e996;
+    
+  }
+  .marquee-rtl > div {
+    display: inline-block; /* important */
+    white-space: nowrap; /* important */
+    animation: defilement-rtl 15s infinite linear; /* défilement */
+    cursor: pointer;
+    padding: 10px 10em 10px 100%;
+  }
+  .marquee-rtl:hover > div {
+    animation-play-state: paused; /* met en pause le défilement */
+  }
+  .marquee-rtl > div:first-line {
+    font-weight: 700;
+    color: black;
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    
+  }
+  @keyframes defilement-rtl {
+    0% {
+      -webkit-transform: translate(25%);
+      transform: translate(25%);
+    }
+  
+    
+    100% {
+      -webkit-transform: translate(-100%);
+      transform: translate(-100%);
+    }
+  }
+  
+  
+    /* carrousel items */
+    .carrousel-item {
+     
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.6s ease-in-out;
+    }
+
+  .carousel-boutton {
+        display: inline-block;
+        background-color: #e1e996;
+        border-radius: 20px;
+        border: 4px double #cccccc;
+        color: #000000;
+        text-align: center;
+        font-size: 15px;
+        padding: 10px;
+        width: 70px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    
+  }
+  .carousel-boutton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  .carousel-boutton span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  .carousel-boutton:hover {
+    background-color: #f7c2f9;
+  }
+  .carousel-boutton:hover span {
+    padding-right: 25px;
+  }
+  .carousel-boutton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
+  .carousel {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }

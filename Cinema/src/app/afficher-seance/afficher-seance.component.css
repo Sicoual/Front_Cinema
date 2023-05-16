@@ -1,0 +1,55 @@
+.page {	
+    background-color: #e8ebcb;	
+  }	
+
+  .titre {	
+    text-align: center;	
+    color: aliceblue;	
+    background-color: rgb(40, 39, 47);	
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.3);	
+    margin-left: 50px;	
+    margin-right: 50px;	
+  }	
+
+  .recherche {	
+    width: 200px;	
+    padding: 10px;	
+    border: 1px solid #ccc; 	
+    border-radius: 4px; 	
+    font-size: 14px; 	
+    background-color: #fff; 	
+    color: #333; 	
+    margin-left: 10px;	
+  }	
+
+  .contenu {	
+    margin-left: 20px;	
+    margin-right: 20px;	
+  }	
+
+  .resaOK {	
+    display: flex;	
+    justify-content: center;	
+    align-items: center;	
+    width: 300px;	
+    height: 200px; 	
+    margin: 0 auto;	
+    border: 1px solid #ccc;	
+    border-radius: 4px;	
+    background-color: #f0f0f0;	
+    padding: 20px;	
+    text-align: center;	
+    margin-bottom: 20px;	
+  }	
+
+  .btn.btn-primary {	
+    background-color: #1c2f43;	
+    border-color: #1c2f43;	
+    color: #fff;	
+  }	
+
+  .btn.btn-primary:hover {	
+    background-color: #0069d9;	
+    border-color: #0062cc;	
+    color: #fff;	
+  }	

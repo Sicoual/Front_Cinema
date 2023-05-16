@@ -1,23 +1,28 @@
-<br><br>
-<h1>En ce moment à l'affiche</h1>
-<br><br>
-<div class="grille-films">
-  <div class="film-card" *ngFor="let film of films" (click)="afficherInfosFilm(film.id)">
-    <div class="film-image">
-      <img [src]="'assets/images/' + film.id + '.jpg'" [alt]="film.nom" onerror="this.src='assets/images/default.jpg'">
-    </div>
-    <div class="film-details">
-      <div class="film">
-        <h2 class="film-title"><strong>{{ film.nom }}</strong></h2>
-        <p class="film-director">Réalisateur : {{ film.realisateur }}</p>
-        <p class="film-actors">Acteurs : {{ film.acteur_1 }}, {{ film.acteur_2 }}</p>
-        <p class="film-duration">Durée : {{ film.duree }}</p>
-        <p class="film-release-date">Date de sortie : {{ film.dateSortie }}</p>
-        <p class="film-category">Catégorie : {{ film.categorie }}</p>
-        <p class="film-language">Langue : {{ film.langue }}</p>
+<div class="page">
+  <br>
+  <div class="titre">
+    <h2>En ce moment à l'affiche</h2>
+  </div>
+  <br>
+  <div class="grille-films">
+    <div class="film-card" *ngFor="let film of films" (click)="afficherInfosFilm(film.id)">
+      <div class="film-image">
+        <img [src]="'assets/images/' + film.id + '.jpg'" [alt]="film.nom" onerror="this.src='assets/images/default.jpg'">
+      </div>
+      <div class="film-details">
+        <div class="film">
+          <h2 class="film-title"><strong>{{ film.nom }}</strong></h2>
+          <p class="film-director">Réalisateur : {{ film.realisateur }}</p>
+          <p class="film-actors">Acteurs : {{ film.acteur_1 }}, {{ film.acteur_2 }}</p>
+          <p class="film-duration">Durée : {{ film.duree }}</p>
+          <p class="film-release-date">Date de sortie : {{ film.dateSortie }}</p>
+          <p class="film-category">Catégorie : {{ film.categorie }}</p>
+          <p class="film-language">Langue : {{ film.langue }}</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 
   

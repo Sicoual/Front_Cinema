@@ -1,4 +1,10 @@
-<table class="table table-striped table-hover">
+<div class="page">
+  <br />
+  <div class="titre">
+    <h2>Possibilité de réservation</h2>
+  </div>
+  <br />
+  <div class="contenu"><table class="table table-striped table-hover">
   <thead>
     <tr>
       <th scope="col-md-2">Film</th>
@@ -16,6 +22,7 @@
         </td>
         <td>{{ seance.date }}</td>
         <td>{{ seance.heure }}</td>
+        
         <td>
           <button class="btn btn-primary" (click)="AllerAReservation(seance)">Réserver</button>
         </td>
@@ -29,7 +36,8 @@
     </ng-container>
   </tbody>
 </table>
-
+  </div>
+  </div>
 
   
 
