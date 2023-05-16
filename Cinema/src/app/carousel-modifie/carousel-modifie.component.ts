@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-carrousel-affiche',
-  templateUrl: './carrousel-affiche.component.html',
-  styleUrls: ['./carrousel-affiche.component.css']
+  selector: 'app-carousel-modifie',
+  templateUrl: './carousel-modifie.component.html',
+  styleUrls: ['./carousel-modifie.component.css']
 })
-export class CarrouselAfficheComponent {
+export class CarouselModifieComponent {
   currentSlide = 0;
   // partie a modifier pour aller chercher les affiches de la BDD
   // avec affichelien , for each
@@ -59,5 +59,5 @@ export class CarrouselAfficheComponent {
   getActiveClassBis(index: number): string {
     return this.currentSlide2 === index ? 'active' : '';
   }
-}
 
+}
