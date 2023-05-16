@@ -1,7 +1,8 @@
 <div class="page">
   <br />
   <div class="titre">
-<h2>Réserver des places pour la séance du {{ seance.date }} à  {{ seance.heure }} pour le film {{ seance.film.nom }} </h2>
+<h2>Réserver des places pour {{ seance.film.nom }} </h2>
+<p>Salle n° {{ seance.salle.id }}</p>
 </div>
 <br>
 <!-- Affichage de l'image du film -->
@@ -24,7 +25,9 @@
   <div>
     <p>Prix unitaire : {{ prix }} €</p>
     <p>Prix : {{ prix * nombrePlaces }} €</p>
-    <!-- <p>Places restantes : {{ placesRestantes }}</p> assayer d'ajouter sinon tant pis -->
+    <p>Places dans la salle : {{ seance.salle.nb_places }}</p>
+    <p>Places réservées: {{ seance.nbPlacesReservees }}</p>
+    <p>Nombre de place restantes : {{seance.salle.nb_places - seance.nbPlacesReservees }}</p>
   </div>
 <br>
   <button class="btn btn-primary" (click)="reserverPlaces()">Réserver</button>
@@ -36,11 +39,14 @@
         placesRestantes !== null &&
         placesRestantes >= 0
       "
-    >
+    > <p>Salle n° {{ seance.salle.id }}</p>
+      <p>{{ seance.film.nom }}</p>
       <p>Nombre de places réservées : {{ nombrePlaces }}</p>
-      <p>Séance : {{ seanceId }}</p>
       <p>Prix total : {{ prix * nombrePlaces }} €</p>
       <p>Places restantes : {{ placesRestantes }}</p>
+      <p>Salle n° {{ seance.salle.id }}</p>
+      <p>Date : {{ seance.date }}</p>
+      <p>Horaires :{{ seance.heure }}</p>
     </div>
 
     <div *ngIf="!reservationReussie">
