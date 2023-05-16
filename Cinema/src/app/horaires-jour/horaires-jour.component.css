@@ -1,16 +1,35 @@
-h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 16px;
-  }
-  
-  div {
-    margin-bottom: 16px;
-  }
-  
+.page {
+  background-color: #e8ebcb;
+}
+
+.titre {
+  text-align: center;
+  color: aliceblue;
+  background-color: rgb(40, 39, 47);
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.3);
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.contenu {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.inputDate, .recherche {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  font-size: 14px; 
+  background-color: #fff; 
+  color: #333; 
+}
+
   table {
     width: 100%;
     border-collapse: collapse;
+    background-color: #e8ebcb;
   }
   
   th {
@@ -28,16 +47,14 @@ h2 {
     padding: 8px;
   }
   
-  button {
-    font-size: 16px;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
+  .btn.btn-primary {
+    background-color: #1c2f43;
+    border-color: #1c2f43;
     color: #fff;
-    cursor: pointer;
   }
   
-  button:hover {
+  .btn.btn-primary:hover {
     background-color: #0069d9;
+    border-color: #0062cc;
+    color: #fff;
   }
