@@ -8,11 +8,12 @@ import { CarrouselAfficheComponent } from './carrousel-affiche/carrousel-affiche
 import { ProchainementComponent } from './prochainement/prochainement.component';
 import { HorairesJourComponent } from './horaires-jour/horaires-jour.component';
 import { PageContactsComponent } from './page-contacts/page-contacts.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 
 //redirect to = mettre sur la page principal => carroussel
 const routes: Routes = [
-  { path: '', redirectTo: '/accueil', pathMatch: 'full' },
+  { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: 'afficher-seance/:id', component: AfficherSeanceComponent },
   { path: 'reservation/:id', component: ReservationComponent },
   { path: 'film/:id', component: InfosFilmComponent },
@@ -21,8 +22,8 @@ const routes: Routes = [
   { path: "filmographie", component: GrilleFilmsComponent },
   { path: "contacts", component: PageContactsComponent },
   { path: "prochainement", component: ProchainementComponent },
-  { path: "horaires", component: HorairesJourComponent }
-
+  { path: "horaires", component: HorairesJourComponent },
+  { path: "newsletter", component: NewsletterComponent }
   ];
 
 

@@ -115,6 +115,7 @@
       }
   
   /* Défilement de droite à gauche */
+  
 .marquee-rtl {
   overflow: hidden; /* important */
   width: 100%; 
