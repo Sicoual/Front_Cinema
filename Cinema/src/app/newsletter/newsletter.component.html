@@ -1,0 +1,69 @@
+<div class="container">
+  <form (ngSubmit)="submitForm()">
+    <legend>ABONNEMENT A LA NEWSLETTER CDD</legend>
+    <label for="salutation">Civilité</label>
+    <select id="salutation" name="salutation" [(ngModel)]="formData.salutation" required>
+      <option value=""></option>
+      <option value="Mr.">M.</option>
+      <option value="Ms.">Mlle</option>
+      <option value="Mrs.">Mme</option>
+      <option value="mmme">M. & Mme</option>
+    </select>
+
+    <label for="first_name">Prénom <span style="color:red">*</span></label>
+    <input id="first_name" name="first_name" type="text" [(ngModel)]="formData.firstName" required>
+
+    <label for="last_name">Nom <span style="color:red">*</span></label>
+    <input id="last_name" name="last_name" type="text" [(ngModel)]="formData.lastName" required>
+
+    <label for="email">Email <span style="color:red">*</span></label>
+    <input id="email" name="email" type="email" [(ngModel)]="formData.email" required>
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="formData.newsletterGeneral"> Newsletter générale
+      </label>
+    </div>
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="formData.receiveInformation"> J’accepte de recevoir des informations et/ou des offres préférentielles de Cinema du Dimanche
+      </label>
+    </div>
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="formData.receivePartnerInformation"> J’accepte de recevoir des informations et/ou des offres préférentielles de nos partenaires culturels
+      </label>
+    </div>
+
+    <button type="submit">Valider</button>
+  </form>
+  <hr>
+  <p>
+    En application des dispositions de la Loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données vous concernant.
+    <br> Pour exercer ces droits, veuillez nous contacter à l'adresse suivante :
+    Cinema du Dimanche
+    Adresse : 96 rue Dudimanche 14000 Caen
+    Téléphone : +90-9999878398
+    Email : CDD@cinema.com
+  </p>
+        <p>
+      Nous vous informons que les informations recueillies font l'objet d'un traitement informatique destiné à la gestion de notre newsletter. Les destinataires des données sont les services en charge de la gestion des abonnements et de l'envoi des newsletters. Les données collectées sont conservées pendant une durée de 724 ans.
+    Vous pouvez vous désabonner de notre newsletter à tout moment en cliquant sur le lien de désinscription présent dans chaque email que vous recevez.
+    Merci de votre confiance et de votre intérêt pour notre newsletter !
+    </p>
+    
+  
+</div>
+
+<div id="modalWindow" class="modal" *ngIf="formData.salutation && formData.firstName && formData.lastName && formData.email">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <p>Merci d'avoir souscrit à la newsletter, vous recevrez très bientôt un mail de confirmation avec toutes les informations nécessaires.
+      <br>Fermez cette fenêtre, patientez 3s et vous serez redirigé vers la page d'accueil.
+    </p>
+  </div>
+</div>
+
+
