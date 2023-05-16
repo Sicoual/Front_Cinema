@@ -12,6 +12,7 @@ export class AfficherSeanceComponent {
 
   seances : AfficherSeance[] = [];
   filmId!: number;
+  salleId!: number;
   
 
   constructor(private seanceService : AfficherSeanceService, private router : Router, private route: ActivatedRoute){}
