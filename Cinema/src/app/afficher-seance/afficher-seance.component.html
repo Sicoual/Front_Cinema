@@ -1,41 +1,35 @@
-<div class="page">
-  <br />
-  <div class="titre">
-    <h2>Possibilité de réservation</h2>
-  </div>
-  <br />
-  <div class="contenu">
-    <table>
-      <thead>
-        <tr>
-          <th scope="col-md-2">id</th>
-          <th scope="col-md-6">Date</th>
-          <th scope="col-md-6">Heure</th>
-          <th scope="col-md-6">Réservation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <ng-container *ngIf="seances&& seances.length">
-          <tr *ngFor="let seance of seances">
-            <td>{{seance.id}}</td>
-            <td>{{seance.date}}</td>
-            <td>{{seance.heure}}</td>
-            <td>
-              <button class="btn btn-primary" (click)="AllerAReservation(seance)">Réserver</button>
-            </td>
-          </tr>
-        </ng-container>
-        <ng-container *ngIf="!seances|| !seances.length">
-          <tr>
-            <td colspan="5" class="text-center">Aucune séance disponible</td>
-          </tr>
-        </ng-container>
-      </tbody>
-      </table>
-  </div>
-  </div>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col-md-2">Film</th>
+      <th scope="col-md-2">date</th>
+      <th scope="col-md-2">heure</th>
+      <th scope="col-md-2">Réserver</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="seances && seances.length">
+      <tr *ngFor="let seance of seances; let first = first">  
+        <td>
+          <img [src]="getImageSrc(seance.film.id)" alt="{{ seance.film.id }}" width="200px" /> 
+        </td>
+        <td>{{ seance.date }}</td>
+        <td>{{ seance.heure }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="AllerAReservation(seance)">Réserver</button>
+        </td>
+      
+      </tr>
+    </ng-container>
+    <ng-container *ngIf="!seances || !seances.length">
+      <tr>
+        <td colspan="5" class="text-center">Aucune séance disponible</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
 
-  
 
   
 
