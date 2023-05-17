@@ -20,6 +20,7 @@ import { BoutiqueComponent } from './boutique/boutique.component';
 import { ImprimerReservationComponent } from './imprimer-reservation/imprimer-reservation.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { CarouselModifieComponent } from './carousel-modifie/carousel-modifie.component';
+import { FilmsComponent } from './films/films.component';
 import { RegisseurComponent } from './regisseur/regisseur.component';
 
 
@@ -39,6 +40,7 @@ import { RegisseurComponent } from './regisseur/regisseur.component';
     ImprimerReservationComponent,
     NewsletterComponent,
     CarouselModifieComponent,
+    FilmsComponent,
     RegisseurComponent,
     ],
   
