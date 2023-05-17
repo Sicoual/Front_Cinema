@@ -11,6 +11,7 @@ import { ImprimerReservationComponent } from './imprimer-reservation/imprimer-re
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { CarouselModifieComponent } from './carousel-modifie/carousel-modifie.component';
 import { FilmsComponent } from './films/films.component';
+import { RegisseurComponent } from './regisseur/regisseur.component';
 
 
 //redirect to = mettre sur la page principal => carroussel
@@ -27,8 +28,8 @@ const routes: Routes = [
   { path: "horaires", component: HorairesJourComponent },
   { path: "imprimer", component: ImprimerReservationComponent },
   { path: "newsletter", component: NewsletterComponent },
-  { path: "films", component: FilmsComponent }
-  
+  { path: "films", component: FilmsComponent },
+  { path: "regisseur", component: RegisseurComponent },
   ];
 
 @NgModule({
