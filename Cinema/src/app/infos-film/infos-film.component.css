@@ -84,18 +84,3 @@
   color: #fff;
 }
 
-.icones-souris {
-  pointer-events: none;
-  position: relative;
-}
-
-.icone-souris {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-image: url("src/assets/etoile/etoile.png");
-  background-size: cover;
-  pointer-events: none;
-  z-index: 9999;
-}
-

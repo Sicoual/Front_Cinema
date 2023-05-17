@@ -46,7 +46,6 @@ export class InfosFilmComponent implements OnInit {
 
   afficheLien!: string;
   filmLien!: string;
-  icones: { top: string; left: string }[] = [];
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
@@ -73,27 +72,5 @@ export class InfosFilmComponent implements OnInit {
   }
 
 
-@HostListener('mousemove', ['$event'])
-onMouseMove(event: MouseEvent) {
-  const mouseX = event.clientX;
-  const mouseY = event.clientY;
 
-  const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
-
-  const offsetX = (mouseX - windowWidth / 2) / 5;
-  const offsetY = (mouseY - windowHeight / 2) / 5;
-
-  // Supprimer les icônes précédentes
-  this.icones = [
-      { top: mouseY + 'px', left: mouseX + 'px' },
-      { top: mouseY + 30 + 'px', left: mouseX + 30 + 'px' },
-      { top: mouseY + 60 + 'px', left: mouseX + 60 + 'px' },
-    ];
-
-  // Générer les nouvelles icônes d'étoiles
-  for (let i = 0; i < 3; i++) {
-    this.icones.push({ top: mouseY + offsetY + 'px', left: mouseX + offsetX + 'px' });
-  }
-}
 }
