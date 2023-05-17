@@ -31,10 +31,10 @@
         <p>Salle n° {{ seance.salle.id }}</p>
         <p>{{ seance.film.nom }}</p>
         <p>Nombre de places réservées : {{ nombrePlaces }}</p>
-        <p>Prix total : {{ prix * nombrePlaces }} €</p>
         <p>Places restantes : {{ placesRestantes }}</p>
         <p>Date : {{ seance.date }}</p>
         <p>Horaires : {{ seance.heure }}</p>
+        <p>Prix total : {{ prix * nombrePlaces }} €</p>
         <button class="btn btn-primary" [disabled]="nombrePlaces === 0" (click)="imprimerReservation()">Imprimer la
           réservation</button>
         <br>
