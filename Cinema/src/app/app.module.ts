@@ -20,6 +20,7 @@ import { BoutiqueComponent } from './boutique/boutique.component';
 import { ImprimerReservationComponent } from './imprimer-reservation/imprimer-reservation.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { CarouselModifieComponent } from './carousel-modifie/carousel-modifie.component';
+import { FilmsComponent } from './films/films.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { CarouselModifieComponent } from './carousel-modifie/carousel-modifie.co
     ImprimerReservationComponent,
     NewsletterComponent,
     CarouselModifieComponent,
+    FilmsComponent,
     ],
   
   imports: [
