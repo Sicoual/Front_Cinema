@@ -7,6 +7,7 @@ import { InfosFilmComponent } from './infos-film/infos-film.component';
 import { ProchainementComponent } from './prochainement/prochainement.component';
 import { HorairesJourComponent } from './horaires-jour/horaires-jour.component';
 import { PageContactsComponent } from './page-contacts/page-contacts.component';
+import { ImprimerReservationComponent } from './imprimer-reservation/imprimer-reservation.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { CarouselModifieComponent } from './carousel-modifie/carousel-modifie.component';
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: "contacts", component: PageContactsComponent },
   { path: "prochainement", component: ProchainementComponent },
   { path: "horaires", component: HorairesJourComponent },
+  { path: "imprimer", component: ImprimerReservationComponent },
   { path: "newsletter", component: NewsletterComponent }
   ];
 
