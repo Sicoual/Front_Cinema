@@ -1,9 +1,14 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import {
+  Component,
+  Injectable,
+  OnInit,
+  HostListener,
+  ElementRef,
+} from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Film } from '../services/film/film';
 import { FilmService } from '../services/film/film.service';
 import { AfficherSeance } from '../services/seance/afficher-seance';
-
 
 @Component({
   selector: 'app-infos-film',
@@ -12,9 +17,8 @@ import { AfficherSeance } from '../services/seance/afficher-seance';
 })
 @Injectable()
 export class InfosFilmComponent implements OnInit {
-
   public film: Film = {
-    id: 0 ,
+    id: 0,
     nom: '',
     realisateur: '',
     acteur_1: '',
@@ -26,14 +30,14 @@ export class InfosFilmComponent implements OnInit {
     langue: '',
     bandeAnnonce: '',
   };
-seance: any;
+  seance: any;
 
   constructor(
-    public filmService: FilmService, 
+    public filmService: FilmService,
     private router: Router,
     private route: ActivatedRoute,
-
-    ) {}
+    private elementRef: ElementRef
+  ) {}
 
   voirBA = false;
   // voirBa() {
@@ -66,4 +70,7 @@ seance: any;
   AllerAListeSeances() {
     this.router.navigate(['/seance', this.film.id]);
   }
+
+
+
 }
