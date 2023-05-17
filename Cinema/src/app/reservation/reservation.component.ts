@@ -60,4 +60,7 @@ export class ReservationComponent {
   getImageSrc(filmId: number): string {
     return `assets/images/${filmId}.jpg`; // Recupere l'id de l'image
   }
+  imprimerReservation() {
+    this.router.navigate(['/imprimer']);
+  }
 }
