@@ -1,0 +1,42 @@
+
+
+
+<div class="marquee-rtl">
+    <div>LES FILMS<b> A L'AFFICHE </b>EN CE MOMENT</div>
+  </div>
+  
+  <div class="carousel" style="text-align: center; background-color: #e8ebcb;">
+    <button class="carousel-boutton" (click)="previousSlide()"><i class="fas fa-chevron-left"></i></button>
+    <div class="carousel-items" style="display: flex; align-items: center;">
+      <!-- boucle sur chaque image -->
+      <div class="carousel-item" *ngFor="let image of images; let i = index" [ngClass]="[getActiveClass(i), 'center']">
+        <a [routerLink]="['/infos', i+1]">
+          <img src="assets/images/{{ image }}" alt="Slide {{ i + 1 }}" style="height: 500px; width: 350px;">
+        </a>  
+      </div>
+    </div>
+    <button class="carousel-boutton" (click)="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  
+<a href="/newsletter">S'inscrire à la newsletter</a>
+
+
+  <div class="marquee-rtl">
+    <div>ET VOICI LES FILMS A VENIR DANS LES PROCHAINES SEMAINES</div>
+  </div> 
+  
+  <div class="carousel" style="text-align: center; background-color: #e8ebcb;">
+    <button class="carousel-boutton" (click)="previousSlideBis()"><i class="fas fa-chevron-left"></i></button>
+    <div class="carousel-items" style="display: flex; align-items: center;">
+      <!-- boucle sur chaque image -->
+      <div class="carousel-item" *ngFor="let image of slides2; let i = index" [ngClass]="[getActiveClassBis(i), 'center']">
+        <a [routerLink]="['/prochainement']">
+          <img src="assets/imageFilmAVenir/{{ image }}" alt="Slide {{ i + 1 }}" style="height: 500px; width: 350px;">
+        </a>
+      </div>
+    </div>
+    <button class="carousel-boutton" (click)="nextSlideBis()"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <a href="https://www.ferrero.fr/nutella">
+    <img src="assets/pub/imagepub.jpg" style="width: 100%;"  >
+  </a>
