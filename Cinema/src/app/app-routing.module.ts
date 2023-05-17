@@ -11,6 +11,7 @@ import { BoutiqueComponent } from './boutique/boutique.component';
 import { ImprimerReservationComponent } from './imprimer-reservation/imprimer-reservation.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { CarouselModifieComponent } from './carousel-modifie/carousel-modifie.component';
+import { RegisseurComponent } from './regisseur/regisseur.component';
 
 
 //redirect to = mettre sur la page principal => carroussel
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: "horaires", component: HorairesJourComponent },
   { path: "boutique", component: BoutiqueComponent },
   { path: "imprimer", component: ImprimerReservationComponent },
-  { path: "newsletter", component: NewsletterComponent }
+  { path: "newsletter", component: NewsletterComponent },
+  { path: "regisseur", component: RegisseurComponent },
   ];
 
 
