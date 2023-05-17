@@ -16,6 +16,7 @@ import { GrilleFilmsComponent } from './voirTousLesFilms/grille-films/grille-fil
 import { PageContactsComponent } from './page-contacts/page-contacts.component';
 import { ProchainementComponent } from './prochainement/prochainement.component';
 import { HorairesJourComponent } from './horaires-jour/horaires-jour.component';
+import { BoutiqueComponent } from './boutique/boutique.component';
 import { ImprimerReservationComponent } from './imprimer-reservation/imprimer-reservation.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { CarouselModifieComponent } from './carousel-modifie/carousel-modifie.component';
@@ -33,9 +34,9 @@ import { CarouselModifieComponent } from './carousel-modifie/carousel-modifie.co
     PageContactsComponent,
     ProchainementComponent,
     HorairesJourComponent,
+    BoutiqueComponent,
     ImprimerReservationComponent,
     NewsletterComponent,
-    
     CarouselModifieComponent,
     ],
   
