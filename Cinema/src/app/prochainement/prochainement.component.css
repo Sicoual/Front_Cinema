@@ -22,7 +22,7 @@
 .film-card {
   display: flex;
   flex-direction: column;
-  background-color: #e8ebcb;
+  background-color: #f5e9dd;
   padding: 20px;
   border-radius: 5px;
 }
