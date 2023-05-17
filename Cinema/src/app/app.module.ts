@@ -17,6 +17,7 @@ import { GrilleFilmsComponent } from './voirTousLesFilms/grille-films/grille-fil
 import { PageContactsComponent } from './page-contacts/page-contacts.component';
 import { ProchainementComponent } from './prochainement/prochainement.component';
 import { HorairesJourComponent } from './horaires-jour/horaires-jour.component';
+import { BoutiqueComponent } from './boutique/boutique.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { HorairesJourComponent } from './horaires-jour/horaires-jour.component';
     PageContactsComponent,
     ProchainementComponent,
     HorairesJourComponent,
+    BoutiqueComponent,
     ],
   
   imports: [
