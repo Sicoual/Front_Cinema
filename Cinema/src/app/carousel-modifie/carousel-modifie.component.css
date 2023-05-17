@@ -1,4 +1,6 @@
- 
+.page {	
+  background-color: #f5e9dd;	
+}	
   /* Défilement de droite à gauche */
   .marquee-rtl {
     overflow: hidden; /* important */
