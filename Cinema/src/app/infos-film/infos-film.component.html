@@ -1,4 +1,8 @@
-<div class="page">
+<div class="page icones-souris">
+  <div class="icone-container">
+    <div class="icone-souris" *ngFor="let icone of icones" [style.top]="icone.top" [style.left]="icone.left"></div>
+  </div>
+  
   <br />
   <div class="titre">
     <h2>Informations détaillée du film</h2>

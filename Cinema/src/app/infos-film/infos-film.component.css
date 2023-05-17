@@ -1,5 +1,5 @@
 .page {
-  background-color: #e8ebcb;
+  background-color: #f5e9dd;
 }
 
 .titre {
@@ -12,74 +12,90 @@
 }
 
 .film-container {
-    display: flex;
-    flex-direction: row;
-    margin: 20px 0;
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-  
-  .film-image {
-    margin-right: 20px;
-  }
-  
-  .film-image img {
-    width: 300px;
-  }
-  
-  .film-details {
-    flex: 1;
-    text-align: justify;
-  }
-  
-  .film-details h2 {
-    font-size: 24px;
-    margin-top: 0;
-  }
-  
-  .film-details p {
-    font-size: 16px;
-    margin-top: 0;
-  }
-  
-  .film-details ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .film-details li {
-    font-size: 16px;
-    margin-top: 10px;
-  }
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+  margin-left: 50px;
+  margin-right: 50px;
+}
 
-  .titreBA {
-    text-align: center;
-    background-color: #666666;
-    color: white;
-    padding: 10px;
-    border-radius: 50px;
-    margin-right: 150px;
-    margin-left: 150px;
-  }
-  
-  .trailer-container {
-    text-align: center;
-    background-color: #ccc3c3;
-    padding: 20px;
-    border-radius: 50px;
-    margin-right: 150px;
-    margin-left: 150px;
-  }
+.film-image {
+  margin-right: 20px;
+}
 
-  .btn.btn-primary {
-    background-color: #1c2f43;
-    border-color: #1c2f43;
-    color: #fff;
-  }
-  
-  .btn.btn-primary:hover {
-    background-color: #0069d9;
-    border-color: #0062cc;
-    color: #fff;
-  }
+.film-image img {
+  width: 300px;
+}
+
+.film-details {
+  flex: 1;
+  text-align: justify;
+}
+
+.film-details h2 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.film-details p {
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.film-details ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.film-details li {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.titreBA {
+  text-align: center;
+  background-color: #666666;
+  color: white;
+  padding: 10px;
+  border-radius: 50px;
+  margin-right: 150px;
+  margin-left: 150px;
+}
+
+.trailer-container {
+  text-align: center;
+  background-color: #ccc3c3;
+  padding: 20px;
+  border-radius: 50px;
+  margin-right: 150px;
+  margin-left: 150px;
+}
+
+.btn.btn-primary {
+  background-color: #1c2f43;
+  border-color: #1c2f43;
+  color: #fff;
+}
+
+.btn.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+  color: #fff;
+}
+
+.icones-souris {
+  pointer-events: none;
+  position: relative;
+}
+
+.icone-souris {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url("src/assets/etoile/etoile.png");
+  background-size: cover;
+  pointer-events: none;
+  z-index: 9999;
+}
+

@@ -1,9 +1,14 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import {
+  Component,
+  Injectable,
+  OnInit,
+  HostListener,
+  ElementRef,
+} from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Film } from '../services/film/film';
 import { FilmService } from '../services/film/film.service';
 import { AfficherSeance } from '../services/seance/afficher-seance';
-
 
 @Component({
   selector: 'app-infos-film',
@@ -12,9 +17,8 @@ import { AfficherSeance } from '../services/seance/afficher-seance';
 })
 @Injectable()
 export class InfosFilmComponent implements OnInit {
-
   public film: Film = {
-    id: 0 ,
+    id: 0,
     nom: '',
     realisateur: '',
     acteur_1: '',
@@ -26,14 +30,14 @@ export class InfosFilmComponent implements OnInit {
     langue: '',
     bandeAnnonce: '',
   };
-seance: any;
+  seance: any;
 
   constructor(
-    public filmService: FilmService, 
+    public filmService: FilmService,
     private router: Router,
     private route: ActivatedRoute,
-
-    ) {}
+    private elementRef: ElementRef
+  ) {}
 
   voirBA = false;
   // voirBa() {
@@ -42,6 +46,7 @@ seance: any;
 
   afficheLien!: string;
   filmLien!: string;
+  icones: { top: string; left: string }[] = [];
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
@@ -66,4 +71,29 @@ seance: any;
   AllerAListeSeances() {
     this.router.navigate(['/seance', this.film.id]);
   }
+
+
+@HostListener('mousemove', ['$event'])
+onMouseMove(event: MouseEvent) {
+  const mouseX = event.clientX;
+  const mouseY = event.clientY;
+
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+
+  const offsetX = (mouseX - windowWidth / 2) / 5;
+  const offsetY = (mouseY - windowHeight / 2) / 5;
+
+  // Supprimer les icônes précédentes
+  this.icones = [
+      { top: mouseY + 'px', left: mouseX + 'px' },
+      { top: mouseY + 30 + 'px', left: mouseX + 30 + 'px' },
+      { top: mouseY + 60 + 'px', left: mouseX + 60 + 'px' },
+    ];
+
+  // Générer les nouvelles icônes d'étoiles
+  for (let i = 0; i < 3; i++) {
+    this.icones.push({ top: mouseY + offsetY + 'px', left: mouseX + offsetX + 'px' });
+  }
+}
 }
