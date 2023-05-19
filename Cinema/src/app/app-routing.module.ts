@@ -12,6 +12,8 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { CarouselModifieComponent } from './carousel-modifie/carousel-modifie.component';
 import { FilmsComponent } from './films/films.component';
 import { RegisseurComponent } from './regisseur/regisseur.component';
+import { BoutiqueComponent } from './boutique/boutique.component';
+import { RegiSeancesComponent } from './regi-seances/regi-seances.component';
 
 
 //redirect to = mettre sur la page principal => carroussel
@@ -21,15 +23,19 @@ const routes: Routes = [
   { path: 'reservation/:id', component: ReservationComponent },
   { path: 'film/:id', component: InfosFilmComponent },
   { path: 'infos/:id', component:InfosFilmComponent},
-  {path: "accueil", component: CarouselModifieComponent},
+  { path: "accueil", component: CarouselModifieComponent},
   { path: "filmographie", component: GrilleFilmsComponent },
   { path: "contacts", component: PageContactsComponent },
   { path: "prochainement", component: ProchainementComponent },
   { path: "horaires", component: HorairesJourComponent },
   { path: "imprimer", component: ImprimerReservationComponent },
   { path: "newsletter", component: NewsletterComponent },
-  { path: "films", component: FilmsComponent },
+  { path: "listeFilms", component: FilmsComponent },
   { path: "regisseur", component: RegisseurComponent },
+  { path: "boutique", component: BoutiqueComponent },
+  { path: "regiSeance", component: RegiSeancesComponent },
+
+  
   ];
 
 @NgModule({
