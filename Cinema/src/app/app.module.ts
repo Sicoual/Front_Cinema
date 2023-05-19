@@ -22,6 +22,7 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { CarouselModifieComponent } from './carousel-modifie/carousel-modifie.component';
 import { FilmsComponent } from './films/films.component';
 import { RegisseurComponent } from './regisseur/regisseur.component';
+import { RegiSeancesComponent } from './regi-seances/regi-seances.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { RegisseurComponent } from './regisseur/regisseur.component';
     CarouselModifieComponent,
     FilmsComponent,
     RegisseurComponent,
+    RegiSeancesComponent,
     ],
   
   imports: [
