@@ -55,3 +55,7 @@ h2 {
     display: flex;
     justify-content: space-between;
   }
+
+  .page {	
+    background-color: #f5e9dd;	
+  }	
