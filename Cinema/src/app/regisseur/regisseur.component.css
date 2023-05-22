@@ -1,0 +1,28 @@
+.page {
+    background-color: #f5e9dd;
+  }
+  
+  .titre {
+    text-align: center;
+    color: aliceblue;
+    background-color: rgb(40, 39, 47);
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.3);
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+.p {
+    text-align: center;
+}
+
+.btn.btn-primary {
+    background-color: #1c2f43;
+    border-color: #1c2f43;
+    color: #fff;
+  }
+  
+  .btn.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+    color: #fff;
+  }

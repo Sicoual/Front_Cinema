@@ -1,7 +1,12 @@
-<h1>Prochainement à l'affiche</h1>
-
-<div class="grille-films">
-  <div class="film-card" *ngFor="let file of imageFiles">
-    <img [src]="'assets/imageFilmAVenir/' + file" class="film-image" />
+<div class="page">
+  <br />
+  <div class="titre">
+    <h2>Prochainement à l'affiche</h2>
+  </div>
+  <br />
+  <div class="grille-films">
+    <div class="film-card" *ngFor="let file of imageFiles">
+      <img [src]="'assets/imageFilmAVenir/' + file" class="film-image" />
+    </div>
   </div>
 </div>

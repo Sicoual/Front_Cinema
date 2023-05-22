@@ -1,0 +1,109 @@
+<div class="page">
+
+
+<h2>Liste des films</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Réalisateur</th>
+      <th>Acteur 1</th>
+      <th>Acteur 2</th>
+      <th>Durée</th>
+      <th>Date de sortie</th>
+      <th>Synopsis</th>
+      <th>Catégorie</th>
+      <th>Langue</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let film of films">
+      <td>{{ film.id }}</td>
+      <td>
+        <ng-container *ngIf="!film.enEdition; else editName">
+          {{ film.nom }}
+        </ng-container>
+        <ng-template #editName>
+          <input type="text" [(ngModel)]="film.nom" (keydown.enter)="enregistrerModifications(film)"
+            (keydown.escape)="annulerEdition(film)">
+        </ng-template>
+      </td>
+      <td>{{ film.realisateur }}</td>
+      <td>{{ film.acteur_1 }}</td>
+      <td>{{ film.acteur_2 }}</td>
+      <td>{{ film.duree }}</td>
+      <td>{{ film.dateSortie | date: 'yyyy-MM-dd' }}</td>
+      <td>{{ film.synopsis }}</td>
+      <td>{{ film.categorie }}</td>
+      <td>{{ film.langue }}</td>
+
+      <td>
+        <ng-container *ngIf="!film.enEdition">
+          <button (click)="activerEdition(film)">Modifier</button>
+          <button (click)="supprimerFilm(film)">Supprimer</button>
+        </ng-container>
+        <ng-container *ngIf="film.enEdition">
+          <button (click)="enregistrerModifications(film)">Enregistrer</button>
+          <button (click)="annulerEdition(film)">Annuler</button>
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Ajouter un film</h3>
+
+<form (ngSubmit)="ajouterFilm()" #ajoutFilmForm="ngForm">
+  <div class="form-group">
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" class="form-control" [(ngModel)]="nouveauFilm.nom" required>
+  </div>
+  <div class="form-group">
+    <label for="realisateur">Réalisateur :</label>
+    <input type="text" id="realisateur" name="realisateur" class="form-control" [(ngModel)]="nouveauFilm.realisateur"
+      required>
+  </div>
+  <div class="form-group">
+    <label for="acteur_1">Acteur 1 :</label>
+    <input type="text" id="acteur_1" name="acteur_1" class="form-control" [(ngModel)]="nouveauFilm.acteur_1" required>
+  </div>
+  <div class="form-group">
+    <label for="acteur_2">Acteur 2 :</label>
+    <input type="text" id="acteur_2" name="acteur_2" class="form-control" [(ngModel)]="nouveauFilm.acteur_2" required>
+  </div>
+  <div class="form-group">
+    <label for="duree">Durée :</label>
+    <input type="text" id="duree" name="duree" class="form-control" [(ngModel)]="nouveauFilm.duree" required>
+  </div>
+  <div class="form-group">
+    <label for="dateSortie">Date de sortie :</label>
+    <input type="date" id="dateSortie" name="dateSortie" class="form-control" [(ngModel)]="nouveauFilm.dateSortie"
+      required>
+  </div>
+  <div class="form-group">
+    <label for="synopsis">Synopsis :</label>
+    <textarea id="synopsis" name="synopsis" class="form-control" [(ngModel)]="nouveauFilm.synopsis" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="categorie">Catégorie :</label>
+    <select type="text" id="categorie" name="categorie" class="form-control" [(ngModel)]="nouveauFilm.categorie"
+      required>
+
+      <option value="G">G</option>
+      <option value="PG-13">PG-13</option>
+      <option value="R">R</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="langue">Langue :</label>
+    <select type="text" id="langue" name="langue" class="form-control" [(ngModel)]="nouveauFilm.langue" required>
+  <option value="VO">VO</option>
+  <option value="VF">VF</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Ajouter</button>
+</form>
+</div>

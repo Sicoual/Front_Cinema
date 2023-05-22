@@ -7,7 +7,6 @@ import { AfficherSeance } from './afficher-seance';
   providedIn: 'root'
 })
 export class AfficherSeanceService {
-  [x: string]: any;
 
 
   private _seance : AfficherSeance = {
@@ -17,11 +16,16 @@ export class AfficherSeanceService {
     heure : 0,
     nbPlacesReservees : 0,
     film : {
-      id: 0,
+      id: 15,
       nom: '',
       duree: '',
   },
-    salle : 0
+    salle : {
+
+      id : 1,
+      nb_places : 0,
+      techno : ''
+    }
   }
 
   public get seance() : AfficherSeance {
@@ -65,6 +69,14 @@ export class AfficherSeanceService {
   getSeancesByDate(date: string): Observable<AfficherSeance[]> {
     const url = `${this._url}/date/${date}`;
     return this.http.get<AfficherSeance[]>(url);
+  }
+
+  deleteSeance(seance : AfficherSeance) : Observable<AfficherSeance> {
+    return this.http.delete<AfficherSeance>(`${this._url}/${seance.id}`);
+  }
+
+  ajouterSeance(seance : AfficherSeance) : Observable<AfficherSeance> {
+    return this.http.post<AfficherSeance>(this._url, seance);
   }
 
   }

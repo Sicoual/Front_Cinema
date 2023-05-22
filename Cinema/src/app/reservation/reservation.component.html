@@ -1,38 +1,52 @@
-<h2>Réserver des places pour la séance {{ seanceId }} </h2>
-
-<div>
-  
-  <label for="nombre-places">Nombre de places :</label>
-  <input type="number" id="nombre-places" [(ngModel)]="nombrePlaces" min="0" onkeydown="return event.keyCode === 38 || event.keyCode === 40;" >
-
-</div>
-
-
-<div>
-  <p>Prix unitaire : {{ prix }} €</p>
-  <p>Prix  :  {{prix * nombrePlaces}} €</p>
-      <!-- <p>Places restantes : {{ placesRestantes }}</p> assayer d'ajouter sinon tant pis -->
-</div>
-
-
-
-
-<button (click)="reserverPlaces()">Réserver</button>
-
-<div *ngIf="reservationReussie !== null">
-  <div *ngIf="reservationReussie === true && placesRestantes !== null && placesRestantes >= 0">
-    <p>Nombre de places réservées : {{ nombrePlaces }}</p>
-    <p>Séance : {{ seanceId }}</p>
-    <p>Prix total : {{ prix * nombrePlaces }} €</p>
-    <p>Places restantes : {{ placesRestantes }}</p>
+<div class="page">
+  <br />
+  <div class="titre">
+    <h2>Réserver des places pour {{ seance?.film?.nom }}</h2>
+    <p>Salle n° {{ seance?.salle?.id }}</p>
   </div>
-  
-
-  <div *ngIf="!reservationReussie">
-    <p>La réservation a échoué.</p>
+  <br>
+  <div>
+    <img [src]="getImageSrc(seance?.film?.id)" alt="Image du film" class="image-film">
   </div>
+  <div class="contenu">
+    <div>
+      <br>
+      <label for="nombre-places">Nombre de places :</label>
+      <input class="recherche" type="number" id="nombre-places" [(ngModel)]="nombrePlaces" min="0"
+        onkeydown="return event.keyCode === 38 || event.keyCode === 40;" />
+    </div>
+    <br>
+    <div *ngIf="seance && seance.film">
+      <p>Prix unitaire : {{ prix }} €</p>
+      <p>Prix : {{ prix * nombrePlaces }} €</p>
+      <p>Places dans la salle : {{ seance.salle.nb_places }}</p>
+      <p>Places réservées: {{ seance.nbPlacesReservees }}</p>
+      <p>Nombre de places restantes : {{ seance.salle.nb_places - seance.nbPlacesReservees }}</p>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="reserverPlaces()">Réserver</button>
+    <br><br>
+    <div class="resaOK" *ngIf="reservationReussie !== null">
+      <div *ngIf="reservationReussie === true && placesRestantes !== null && placesRestantes >= 0">
+        <p>Salle n° {{ seance.salle.id }}</p>
+        <p>{{ seance.film.nom }}</p>
+        <p>Nombre de places réservées : {{ nombrePlaces }}</p>
+        <p>Places restantes : {{ placesRestantes }}</p>
+        <p>Date : {{ seance.date }}</p>
+        <p>Horaires : {{ seance.heure }}</p>
+        <p>Prix total : {{ prix * nombrePlaces }} €</p>
+        <button class="btn btn-primary" [disabled]="nombrePlaces === 0" (click)="imprimerReservation()">Imprimer la
+          réservation</button>
+        <br>
+      </div>
 
-  <div *ngIf="reservationReussie && placesRestantes !== null && placesRestantes < 0">
-    <p>Il n'y a plus de places disponibles.</p>
+      <div *ngIf="!reservationReussie">
+        <p>La réservation a échoué.</p>
+      </div>
+
+      <div *ngIf="reservationReussie && placesRestantes !== null && placesRestantes < 0">
+        <p>Il n'y a plus de places disponibles.</p>
+      </div>
+    </div>
   </div>
 </div>

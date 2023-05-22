@@ -12,5 +12,5 @@ export interface Film {
 	langue : string,
 	bandeAnnonce : string
 	// listeSeances[] : Seance,
-
+	enEdition?: boolean; // pour modifier les films à l'intérieur du tableau
 }

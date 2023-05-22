@@ -1,0 +1,78 @@
+<div class="page">
+
+
+<div class="marquee-rtl">
+    <div>LES FILMS<b> A L'AFFICHE </b>EN CE MOMENT</div>
+  </div>
+  
+  <div class="carousel" style="text-align: center; background-color: #f5e9dd;">
+    <button class="carousel-boutton" (click)="previousSlide()"><i class="fas fa-chevron-left"></i></button>
+    <div class="carousel-items" style="display: flex; align-items: center;">
+      <!-- boucle sur chaque image -->
+      <div class="carousel-item" *ngFor="let image of images; let i = index" [ngClass]="[getActiveClass(i), 'center']">
+        <a [routerLink]="['/infos', i+1]">
+          <img src="assets/images/{{ image }}" alt="Slide {{ i + 1 }}" style="height: 500px; width: 350px;">
+        </a>  
+      </div>
+    </div>
+    <button class="carousel-boutton" (click)="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <div class="newsletter">
+    <div class="newsletter2">
+      <h2 class="newsletter3">Abonnez-vous à notre Newsletter ! </h2>
+      <p class="newsletter4">Pour ne rien rater des informations sur votre cinéma préféré ainsi que des merveilles cinématographiques à venir ! <br>
+      Retrouvez des interviews uniques et exclusives des plus grands réalisateurs ainsi que des pépites montantes du cinéma ! </p>
+      <button class="newsletter5">
+        <a class="newsletter6" href="/newsletter">S'inscrire à la newsletter</a>
+      </button>
+    </div>
+  </div>
+
+
+<br>
+<div class="techno">
+  <h1 class="titulo">Nos technologies : </h1>
+ <p class="text_techno"> Une multitude de technologies est mise à votre disposition pour vous permettre de vivre pleinement chaque instant de votre expérience cinématographique, et ce, en profitant pleinement des toutes dernières sorties.
+  <br> Que vous souhaitiez plonger dans une projection en haute définition ou vous laisser transporter par le son surround, chaque détail est minutieusement pris en compte pour créer une atmosphère magique.
+  <br> L'équipe dévouée de votre cinéma s'efforce continuellement de vous offrir les technologies les plus avancées, vous permettant ainsi de vous évader dans l'univers captivant du septième art. Alors, installez-vous confortablement, détendez-vous et préparez-vous à vivre des moments inoubliables grâce à cette expérience cinématographique unique.
+</p> 
+<br>
+ <div class="row bienmarge">
+  <div class="col-md-4">
+    <img src="/assets/logo/2D.png" alt="Image 1" class="img-fluid img-taille">
+  </div>
+  <div class="col-md-4">
+    <img src="/assets/logo/3D.png" alt="Image 2" class="img-fluid img-taille">
+  </div>
+  <div class="col-md-4">
+    <img src="/assets/logo/4DX.png" alt="Image 3" class="img-fluid img-taille">
+  </div>
+</div>
+<br>
+</div>
+
+<br>
+  <div class="marquee-rtl">
+    <div>ET VOICI LES FILMS A VENIR DANS LES PROCHAINES SEMAINES</div>
+  </div> 
+  
+  <div class="carousel" style="text-align: center; background-color: #f5e9dd;">
+    <button class="carousel-boutton" (click)="previousSlideBis()"><i class="fas fa-chevron-left"></i></button>
+    <div class="carousel-items" style="display: flex; align-items: center;">
+      <!-- boucle sur chaque image -->
+      <div class="carousel-item" *ngFor="let image of slides2; let i = index" [ngClass]="[getActiveClassBis(i), 'center']">
+        <a [routerLink]="['/prochainement']">
+          <img src="assets/imageFilmAVenir/{{ image }}" alt="Slide {{ i + 1 }}" style="height: 500px; width: 350px;">
+        </a>
+      </div>
+    </div>
+    <button class="carousel-boutton" (click)="nextSlideBis()"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <br>
+  <a href="https://www.ferrero.fr/nutella">
+    <img src="assets/pub/imagepub.jpg" style="width: 100%; height: 55%;"  >
+  </a>
+
+</div>
+ 

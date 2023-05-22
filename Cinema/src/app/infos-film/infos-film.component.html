@@ -1,29 +1,44 @@
-<!-- Bloc 1 : Bandeau haut de page, Affichage informations film -->
-<div class="film-container">
-  <!-- Affiche du film (à gauche)-->
-  <div class="film-image">
-    <img [src]="afficheLien" alt="{{ film.nom }}" />
+<div class="page">
+  
+  
+  <br />
+  <div class="titre">
+    <h2>Informations détaillée du film</h2>
   </div>
-  <!-- Informations du film (à droite)-->
-  <div class="film-details">
-    <h2>{{ film.nom }}</h2>
-    <p>{{ film.synopsis }}</p>
-    <ul>
-      <li><strong>Durée :</strong> {{ film.duree }}</li>
-      <li><strong>Langue :</strong> {{ film.langue }}</li>
-      <li><strong>Catégorie :</strong> {{ film.categorie }}</li>
-      <!-- <li><button class="btn btn-primary" (click)="voirBa()">Visionner la bande annonce</button></li> -->
-    </ul>
+  <br />
+  <!-- Bloc 1 : Bandeau haut de page, Affichage informations film -->
+  <div class="film-container">
+    <!-- Affiche du film (à gauche)-->
+    <div class="film-image">
+      <img [src]="afficheLien" alt="{{ film.nom }}" />
+    </div>
+    <!-- Informations du film (à droite)-->
+    <div class="film-details">
+      <h2>{{ film.nom }}</h2>
+      <p>{{ film.synopsis }}</p>
+      <ul>
+        <li><strong>Durée :</strong> {{ film.duree }}</li>
+        <li><strong>Langue :</strong> {{ film.langue }}</li>
+        <li><strong>Catégorie :</strong> {{ film.categorie }}</li>
+        <!-- <li><button class="btn btn-primary" (click)="voirBa()">Visionner la bande annonce</button></li> -->
+      </ul>
+    </div>
   </div>
+  <div class="titreBA">
+    <h3>Bande annonce</h3>
+  </div>
+  <!-- Bande annonce -->
+  <div *ngIf="voirBA" class="trailer-container">
+    <video controls>
+      <source [src]="filmLien" />
+    </video>
+  </div>
+  <br />
+  <!-- Bouton de réservation -->
+  <div class="text-center">
+    <a routerLink="/afficher-seance/{{ film.id }}" class="btn btn-primary"
+      >Accéder aux réservations pour ce film</a
+    >
+  </div>
+  <br /><br />
 </div>
-<!-- Bande annonce -->
-<div *ngIf="voirBA" class="trailer-container">
-  <video controls>
-    <source [src]="filmLien"/>
-  </video>
-</div>
-<!-- Bouton de réservation -->
-<div class="text-center">
-  <a routerLink="/afficher-seance/{{film.id}}" class="btn btn-primary">Accéder aux réservations pour ce film</a>
-</div>
-

@@ -1,3 +1,16 @@
+.page {
+  background-color: #f5e9dd;
+}
+
+.titre {
+  text-align: center;
+  color: aliceblue;
+  background-color: rgb(40, 39, 47);
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.3);
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
 /* Styles de la grille de films */
 .grille-films {
   display: grid;
@@ -9,7 +22,7 @@
 .film-card {
   display: flex;
   flex-direction: column;
-  background-color: #f5f5f5;
+  background-color: #f5e9dd;
   padding: 20px;
   border-radius: 5px;
 }

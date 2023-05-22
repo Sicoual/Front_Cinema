@@ -12,6 +12,7 @@ export class AfficherSeanceComponent {
 
   seances : AfficherSeance[] = [];
   filmId!: number;
+  salleId!: number;
   
 
   constructor(private seanceService : AfficherSeanceService, private router : Router, private route: ActivatedRoute){}
@@ -38,5 +39,9 @@ export class AfficherSeanceComponent {
 
   AllerAReservation(seance: AfficherSeance) {
     this.router.navigate(['/reservation', seance.id]);
+  }
+
+  getImageSrc(filmId: number): string {
+    return `assets/images/${filmId}.jpg`; // Remplacez "chemin/vers/images" par le chemin réel vers le dossier contenant les images des films
   }
 }

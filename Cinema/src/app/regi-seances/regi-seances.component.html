@@ -1,0 +1,91 @@
+
+<div class="page">
+
+<h1>Gestion des séances</h1>
+
+<div>
+  <h4>Veuillez choisir une date :</h4>
+  <select id="jour-select" [(ngModel)]="choixDate" (change)="uneDate(choixDate)">
+    <option value="" disabled selected>Choisir une date</option>
+    <option value="2023-05-22">22 mai 2023</option>
+    <option value="2023-05-23">23 mai 2023</option>
+    <option value="2023-05-24">24 mai 2023</option>
+  </select>
+</div>
+
+<div class="flex-space-between">
+  <div class="rechercher-film">
+    <h5>Rechercher</h5>
+    <input type="text" placeholder="Rechercher un film" [(ngModel)]="rechercheTitre" name="rechercheTitre">
+  </div>
+</div>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Heure</th>
+        <th>Durée</th>
+        <th>Nom du film</th>
+        <th>Salle N°</th>
+        <th>Supprimer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let seance of seances" [hidden]="!filtreTitre(seance)">
+        <td>{{ seance.id }}</td>
+        <td>{{ seance.heure }}</td>
+        <td>{{ seance.date }}</td>
+        <td>{{ seance.film.nom }}</td>
+        <td>{{ seance.salle.id }}</td>
+        <td>
+          <button class="btn btn-primary button-rouge" (click)="supprimerSeance(seance)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Ajouter une séance</h3>
+
+  <form (submit)="ajouterSeance()">
+    <div class="form-ajouterSeance">
+      <label for="heure-seance">Heure de la séance :</label>
+      <input type="text" id="heure-seance" [(ngModel)]="nouvelleSeance.heure" name="heureSeance">
+  
+      <div class="form-group">
+        <label for="date-seance">Date :</label>
+        <select id="date-seance" name="date-seance" [(ngModel)]="nouvelleSeance.date" required>
+          <option value="" disabled selected>Choisir une date</option>
+          <option value="2023-05-22">22 mai 2023</option>
+          <option value="2023-05-23">23 mai 2023</option>
+          <option value="2023-05-24">24 mai 2023</option>
+        </select>
+      </div>
+
+      <label for="film-seance">Nom du film :</label>
+      <select id="film-seance" name="film-seance" [(ngModel)]="nouvelleSeance.film.id" required>
+        <option value="" disabled selected>Choisir un film</option>
+        <option *ngFor="let film of films" [value]="film.id">{{ film.nom }}</option>
+      
+      </select>
+
+      <div class="form-group">
+        <label for="salle-seance">Salle :</label>
+        <select id="salle-seance" name="salle-seance" [(ngModel)]="nouvelleSeance.salle.id" required>
+          <option value="" disabled selected>Choisir une salle</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+
+
+  
+      <button type="submit" class="btn btn-primary">Ajouter</button>
+    </div>
+  </form>
+</div>
